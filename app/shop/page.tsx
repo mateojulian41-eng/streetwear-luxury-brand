@@ -43,8 +43,8 @@ export default function ShopPage() {
               SHOP
             </h1>
             <p className="text-muted-foreground max-w-xl leading-relaxed">
-              Piezas exclusivas disenadas para quienes buscan autenticidad en el
-              lujo urbano. Cada prenda es una declaracion de identidad.
+              Piezas exclusivas diseñadas para quienes buscan autenticidad en el
+              lujo urbano. Cada prenda es una declaración de identidad.
             </p>
           </div>
         </section>

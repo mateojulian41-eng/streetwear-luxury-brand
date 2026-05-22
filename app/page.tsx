@@ -534,7 +534,7 @@ export default function Home() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-12 max-w-xl mx-auto">
               Recibe acceso anticipado a nuevos drops, ofertas exclusivas y
-              contenido behind the scenes. Sin spam, solo streetwear.
+              contenido detrás de cámaras. Sin spam, solo streetwear.
             </p>
             <NewsletterForm />
           </div>

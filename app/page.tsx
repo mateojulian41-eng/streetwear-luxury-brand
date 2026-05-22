@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ProductCard } from "@/components/product-card";
-import { products } from "@/lib/products";
+import { products, formatPrice } from "@/lib/products";
 import { ArrowRight, Star, Quote, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -393,7 +393,7 @@ export default function Home() {
                   <ProductCard
                     name={product.name}
                     category={product.category}
-                    price={`$${product.price} USD`}
+                    price={formatPrice(product.price)}
                     image={product.images[0]}
                     slug={product.slug}
                   />

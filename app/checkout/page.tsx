@@ -4,9 +4,16 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ShoppingBag, CreditCard, Truck, Shield } from "lucide-react";
+import {
+  ArrowLeft,
+  ShoppingBag,
+  CreditCard,
+  Truck,
+  Shield,
+} from "lucide-react";
 import Link from "next/link";
 import { useCartStore } from "@/lib/cart-store";
+import { formatPrice } from "@/lib/products";
 import { useState } from "react";
 
 export default function CheckoutPage() {
@@ -41,7 +48,7 @@ export default function CheckoutPage() {
   };
 
   const subtotal = getTotal();
-  const shipping = subtotal >= 400 ? 0 : 15;
+  const shipping = subtotal >= 1600000 ? 0 : 60000;
   const total = subtotal + shipping;
 
   if (items.length === 0) {
@@ -56,7 +63,11 @@ export default function CheckoutPage() {
             <h1 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl leading-none mb-8">
               CHECKOUT
             </h1>
-            <Button asChild size="lg" className="h-14 text-[11px] tracking-[0.3em]">
+            <Button
+              asChild
+              size="lg"
+              className="h-14 text-[11px] tracking-[0.3em]"
+            >
               <Link href="/shop">
                 IR AL SHOP
                 <ShoppingBag className="w-4 h-4 ml-3" />
@@ -234,11 +245,7 @@ export default function CheckoutPage() {
                     size="lg"
                     className="w-full h-16 text-[11px] tracking-[0.3em] disabled:opacity-50"
                   >
-                    {isProcessing ? (
-                      "PROCESANDO..."
-                    ) : (
-                      "CONFIRMAR PEDIDO"
-                    )}
+                    {isProcessing ? "PROCESANDO..." : "CONFIRMAR PEDIDO"}
                   </Button>
                 </form>
               </div>
@@ -253,7 +260,10 @@ export default function CheckoutPage() {
                   {/* Items */}
                   <div className="space-y-4 mb-8">
                     {items.map((item) => (
-                      <div key={`${item.product.id}-${item.size}`} className="flex gap-4">
+                      <div
+                        key={`${item.product.id}-${item.size}`}
+                        className="flex gap-4"
+                      >
                         <div className="w-16 h-20 bg-card/50 flex-shrink-0" />
                         <div className="flex-1">
                           <p className="text-sm font-medium mb-1">
@@ -263,7 +273,7 @@ export default function CheckoutPage() {
                             Talla: {item.size} | Cantidad: {item.quantity}
                           </p>
                           <p className="text-sm">
-                            ${(item.product.price * item.quantity).toFixed(2)} USD
+                            {formatPrice(item.product.price * item.quantity)}
                           </p>
                         </div>
                       </div>
@@ -274,17 +284,19 @@ export default function CheckoutPage() {
                   <div className="space-y-4 mb-8 pt-8 border-t border-border">
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
-                      <span>${subtotal.toFixed(2)} USD</span>
+                      <span>{formatPrice(subtotal)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Envío</span>
-                      <span>{shipping === 0 ? "Gratis" : `$${shipping.toFixed(2)} USD`}</span>
+                      <span>
+                        {shipping === 0 ? "Gratis" : formatPrice(shipping)}
+                      </span>
                     </div>
                     <div className="h-px border-t border-border my-4" />
                     <div className="flex justify-between text-lg font-medium">
                       <span>Total</span>
                       <span className="font-[family-name:var(--font-display)]">
-                        ${total.toFixed(2)} USD
+                        {formatPrice(total)}
                       </span>
                     </div>
                   </div>
@@ -293,7 +305,9 @@ export default function CheckoutPage() {
                   <div className="space-y-4 pt-8 border-t border-border">
                     <div className="flex items-center gap-3 text-sm">
                       <Truck className="w-5 h-5 text-muted-foreground" />
-                      <span className="text-muted-foreground">Envío 3-5 días hábiles</span>
+                      <span className="text-muted-foreground">
+                        Envío 3-5 días hábiles
+                      </span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
                       <Shield className="w-5 h-5 text-muted-foreground" />
@@ -301,7 +315,9 @@ export default function CheckoutPage() {
                     </div>
                     <div className="flex items-center gap-3 text-sm">
                       <CreditCard className="w-5 h-5 text-muted-foreground" />
-                      <span className="text-muted-foreground">Múltiples métodos de pago</span>
+                      <span className="text-muted-foreground">
+                        Múltiples métodos de pago
+                      </span>
                     </div>
                   </div>
                 </div>

@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/product-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { NewsletterForm } from "@/components/newsletter-form";
-import { products } from "@/lib/products";
+import { products, formatPrice } from "@/lib/products";
 import { useState } from "react";
 
 type FilterType = "all" | "ropa" | "calzado";
@@ -113,7 +113,7 @@ export default function ShopPage() {
                     <ProductCard
                       name={product.name}
                       category={product.category}
-                      price={`$${product.price} USD`}
+                      price={formatPrice(product.price)}
                       image={product.images[0]}
                       slug={product.slug}
                     />

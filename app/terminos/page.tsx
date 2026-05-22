@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Términos y Condiciones | NOIR URBANO",
-  description: "Términos y condiciones de uso de NOIR URBANO. Lee nuestros términos antes de comprar.",
+  description:
+    "Términos y condiciones de uso de NOIR URBANO. Lee nuestros términos antes de comprar.",
 };
 
 export default function TermsPage() {
@@ -42,8 +43,8 @@ export default function TermsPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Al acceder y utilizar el sitio web de NOIR URBANO, aceptas estos
-                términos y condiciones. Si no estás de acuerdo con estos términos,
-                por favor no utilices nuestro sitio web.
+                términos y condiciones. Si no estás de acuerdo con estos
+                términos, por favor no utilices nuestro sitio web.
               </p>
             </div>
 
@@ -52,8 +53,8 @@ export default function TermsPage() {
                 2. INFORMACIÓN DE PRODUCTOS
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Nos esforzamos por mostrar con precisión los colores y las imágenes
-                de nuestros productos. Sin embargo:
+                Nos esforzamos por mostrar con precisión los colores y las
+                imágenes de nuestros productos. Sin embargo:
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
                 <li>
@@ -61,8 +62,8 @@ export default function TermsPage() {
                   configuración de tu pantalla
                 </li>
                 <li>
-                  Las medidas pueden tener variaciones mínimas debido al proceso de
-                  fabricación
+                  Las medidas pueden tener variaciones mínimas debido al proceso
+                  de fabricación
                 </li>
                 <li>
                   Todas las prendas son ediciones limitadas de 100 unidades
@@ -82,9 +83,7 @@ export default function TermsPage() {
                   Aceptamos múltiples métodos de pago (tarjetas, transferencias,
                   Nequi, etc.)
                 </li>
-                <li>
-                  El pago se procesa al momento de realizar el pedido
-                </li>
+                <li>El pago se procesa al momento de realizar el pedido</li>
                 <li>
                   Reservamos el derecho de cancelar pedidos si el pago no es
                   verificado
@@ -101,8 +100,8 @@ export default function TermsPage() {
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
                 <li>Tiempo de entrega: 3-5 días hábiles</li>
-                <li>Envío gratis en compras superiores a $400 USD</li>
-                <li>Costo de envío estándar: $15 USD</li>
+                <li>Envío gratis en compras superiores a $1,600,000 COP</li>
+                <li>Costo de envío estándar: $60,000 COP</li>
                 <li>
                   El cliente es responsable de proporcionar una dirección de
                   entrega correcta
@@ -115,8 +114,8 @@ export default function TermsPage() {
                 5. CAMBIOS Y DEVOLUCIONES
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Aceptamos cambios de talla dentro de los primeros 7 días después de
-                recibir tu pedido.
+                Aceptamos cambios de talla dentro de los primeros 7 días después
+                de recibir tu pedido.
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
                 <li>El producto debe estar en perfectas condiciones</li>
@@ -125,8 +124,8 @@ export default function TermsPage() {
                   El cliente asume los costos de envío para cambios de talla
                 </li>
                 <li>
-                  No aceptamos devoluciones por cambio de opinión, solo por defectos
-                  de fabricación
+                  No aceptamos devoluciones por cambio de opinión, solo por
+                  defectos de fabricación
                 </li>
               </ul>
             </div>
@@ -137,9 +136,10 @@ export default function TermsPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Todo el contenido de este sitio web (diseños, logos, imágenes,
-                textos) es propiedad exclusiva de NOIR URBANO y está protegido por
-                las leyes de propiedad intelectual. No está permitido reproducir,
-                distribuir o utilizar nuestro contenido sin autorización expresa.
+                textos) es propiedad exclusiva de NOIR URBANO y está protegido
+                por las leyes de propiedad intelectual. No está permitido
+                reproducir, distribuir o utilizar nuestro contenido sin
+                autorización expresa.
               </p>
             </div>
 
@@ -148,10 +148,10 @@ export default function TermsPage() {
                 7. LIMITACIÓN DE RESPONSABILIDAD
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                NOIR URBANO no se hace responsable por daños directos o indirectos
-                derivados del uso de este sitio web o de la compra de nuestros
-                productos. En ningún caso nuestra responsabilidad excederá el monto
-                total de la compra.
+                NOIR URBANO no se hace responsable por daños directos o
+                indirectos derivados del uso de este sitio web o de la compra de
+                nuestros productos. En ningún caso nuestra responsabilidad
+                excederá el monto total de la compra.
               </p>
             </div>
 
@@ -160,9 +160,9 @@ export default function TermsPage() {
                 8. CONTACTO
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Para cualquier pregunta sobre estos términos y condiciones, puedes
-                contactarnos a través de WhatsApp: +57 313 585 9810 o email:
-                hola@noirurbano.com
+                Para cualquier pregunta sobre estos términos y condiciones,
+                puedes contactarnos a través de WhatsApp: +57 313 585 9810 o
+                email: hola@noirurbano.com
               </p>
             </div>
           </div>

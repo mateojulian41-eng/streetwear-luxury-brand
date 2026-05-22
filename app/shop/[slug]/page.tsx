@@ -243,7 +243,7 @@ export default function ProductPage({
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <p>• Envíos a todo Colombia</p>
                     <p>• 3-5 días hábiles</p>
-                    <p>• Envío gratis en compras superiores a $400 USD</p>
+                    <p>• Envío gratis en compras superiores a $1,600,000 COP</p>
                   </div>
                 </div>
               </div>

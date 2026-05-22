@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useCartStore } from "@/lib/cart-store";
+import { formatPrice } from "@/lib/products";
 import Image from "next/image";
 
 export default function CartPage() {
@@ -171,23 +172,23 @@ export default function CartPage() {
                     <div className="space-y-4 mb-8">
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Subtotal</span>
-                        <span>${getTotal().toFixed(2)} USD</span>
+                        <span>{formatPrice(getTotal())}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Envío</span>
                         <span>
-                          {getTotal() >= 400 ? "Gratis" : "$15.00 USD"}
+                          {getTotal() >= 1600000
+                            ? "Gratis"
+                            : formatPrice(60000)}
                         </span>
                       </div>
                       <div className="h-px border-t border-border my-4" />
                       <div className="flex justify-between text-lg font-medium">
                         <span>Total</span>
                         <span className="font-[family-name:var(--font-display)]">
-                          $
-                          {(getTotal() + (getTotal() >= 400 ? 0 : 15)).toFixed(
-                            2,
-                          )}{" "}
-                          USD
+                          {formatPrice(
+                            getTotal() + (getTotal() >= 1600000 ? 0 : 60000),
+                          )}
                         </span>
                       </div>
                     </div>
@@ -215,7 +216,7 @@ export default function CartPage() {
                         ENVÍO GRATIS
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        En compras superiores a $400 USD
+                        En compras superiores a $1,600,000 COP
                       </p>
                     </div>
                   </div>

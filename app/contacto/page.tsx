@@ -192,7 +192,7 @@ export default function ContactoPage() {
               <p className="text-muted-foreground leading-relaxed">
                 Los envios dentro de Colombia tardan entre 3-5 dias habiles.
                 Enviamos por servientrega con numero de seguimiento. Envio
-                gratis en compras superiores a $400 USD.
+                gratis en compras superiores a $1,600,000 COP.
               </p>
             </div>
 

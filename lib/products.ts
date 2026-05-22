@@ -18,8 +18,8 @@ export const products: Product[] = [
     slug: "shadow-hoodie",
     name: "SHADOW HOODIE",
     category: "Oversize Collection",
-    price: 280,
-    priceInCents: 28000,
+    price: 1120000,
+    priceInCents: 112000000,
     description:
       "Hoodie oversize de corte pesado con capucha estructurada. Confeccionado en algodon premium de 450gsm con acabado cepillado interior. Silueta droopy con hombros caidos y mangas extra largas. El negro absoluto que define nuestra identidad.",
     details: [
@@ -39,8 +39,8 @@ export const products: Product[] = [
     slug: "heavy-cargo",
     name: "HEAVY CARGO",
     category: "Premium Pants",
-    price: 220,
-    priceInCents: 22000,
+    price: 880000,
+    priceInCents: 88000000,
     description:
       "Pantalon cargo de corte wide leg en tela ripstop premium. Multiples bolsillos utilitarios con cierres metalicos negros. Cintura ajustable con trabillas reforzadas. Diseno funcional que fusiona la estetica militar con el lujo urbano.",
     details: [
@@ -60,8 +60,8 @@ export const products: Product[] = [
     slug: "urban-stompers",
     name: "URBAN STOMPERS",
     category: "High Impact Footwear",
-    price: 340,
-    priceInCents: 34000,
+    price: 1360000,
+    priceInCents: 136000000,
     description:
       "Sneaker high-top con plataforma chunky de alto impacto. Upper en cuero premium con detalles en nylon balistico. Suela de goma vulcanizada con traccion extrema. El calzado que domina cualquier territorio urbano.",
     details: [
@@ -81,8 +81,8 @@ export const products: Product[] = [
     slug: "void-tee",
     name: "VOID TEE",
     category: "Oversize Collection",
-    price: 95,
-    priceInCents: 9500,
+    price: 380000,
+    priceInCents: 38000000,
     description:
       "Camiseta oversize de peso medio en algodon premium 240gsm. Corte boxy con hombros caidos y cuello reforzado. Minimalismo absoluto en negro puro. La base perfecta para cualquier outfit urbano.",
     details: [
@@ -102,8 +102,8 @@ export const products: Product[] = [
     slug: "tactical-shorts",
     name: "TACTICAL SHORTS",
     category: "Premium Pants",
-    price: 145,
-    priceInCents: 14500,
+    price: 580000,
+    priceInCents: 58000000,
     description:
       "Shorts cargo de corte oversize en tela ripstop premium. Bolsillos laterales amplios con cierres metalicos. Cintura ajustable con cordon negro. Funcionalidad militar con estetica de lujo.",
     details: [
@@ -123,8 +123,8 @@ export const products: Product[] = [
     slug: "phantom-jacket",
     name: "PHANTOM JACKET",
     category: "Oversize Collection",
-    price: 380,
-    priceInCents: 38000,
+    price: 1520000,
+    priceInCents: 152000000,
     description:
       "Chaqueta bomber oversize en nylon balistico premium. Forro polar de alta calidad para frio moderado. Multiples bolsillos interiores y exteriores. La pieza statement que completa cualquier look.",
     details: [
@@ -144,8 +144,8 @@ export const products: Product[] = [
     slug: "night-runner",
     name: "NIGHT RUNNER",
     category: "High Impact Footwear",
-    price: 290,
-    priceInCents: 29000,
+    price: 1160000,
+    priceInCents: 116000000,
     description:
       "Sneaker low-top con silueta chunky moderna. Upper en malla tecnica con overlays de cuero sintetico. Suela de goma con sistema de amortiguacion. Comodidad extrema con estetica agresiva.",
     details: [
@@ -167,5 +167,10 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function formatPrice(price: number): string {
-  return `$${price} USD`;
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
 }

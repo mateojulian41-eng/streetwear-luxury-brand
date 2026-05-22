@@ -175,45 +175,45 @@ export default function ContactoPage() {
           <div className="space-y-8">
             <div className="pb-8 border-b border-border">
               <h3 className="font-[family-name:var(--font-display)] text-xl mb-3">
-                COMO ELIJO MI TALLA?
+                ¿CÓMO ELIJO MI TALLA?
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Nuestras prendas tienen corte oversize. Recomendamos elegir tu
-                talla habitual para un fit droopy autentico, o una talla menos
-                si prefieres un ajuste mas ceñido. Contactanos por WhatsApp para
+                talla habitual para un fit droopy auténtico, o una talla menos
+                si prefieres un ajuste más ceñido. Contáctanos por WhatsApp para
                 asesorarte personalmente.
               </p>
             </div>
 
             <div className="pb-8 border-b border-border">
               <h3 className="font-[family-name:var(--font-display)] text-xl mb-3">
-                CUANTO TARDA EL ENVIO?
+                ¿CUÁNTO TARDA EL ENVÍO?
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Los envios dentro de Colombia tardan entre 3-5 dias habiles.
-                Enviamos por servientrega con numero de seguimiento. Envio
+                Los envíos dentro de Colombia tardan entre 3-5 días hábiles.
+                Enviamos por servientrega con número de seguimiento. Envío
                 gratis en compras superiores a $1,600,000 COP.
               </p>
             </div>
 
             <div className="pb-8 border-b border-border">
               <h3 className="font-[family-name:var(--font-display)] text-xl mb-3">
-                ACEPTAN CAMBIOS O DEVOLUCIONES?
+                ¿ACEPTAN CAMBIOS O DEVOLUCIONES?
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Si, aceptamos cambios de talla dentro de los primeros 7 dias
-                despues de recibir tu pedido, siempre que el producto este en
+                Sí, aceptamos cambios de talla dentro de los primeros 7 días
+                después de recibir tu pedido, siempre que el producto esté en
                 perfectas condiciones y con sus etiquetas originales.
               </p>
             </div>
 
             <div>
               <h3 className="font-[family-name:var(--font-display)] text-xl mb-3">
-                SON EDICIONES LIMITADAS?
+                ¿SON EDICIONES LIMITADAS?
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Si, cada pieza de nuestra primera entrega esta limitada a 100
-                unidades. Una vez agotadas, no se volveran a fabricar. Cada
+                Sí, cada pieza de nuestra primera entrega está limitada a 100
+                unidades. Una vez agotadas, no se volverán a fabricar. Cada
                 prenda es numerada y viene con certificado de autenticidad.
               </p>
             </div>

@@ -21,10 +21,10 @@ export const products: Product[] = [
     price: 1120000,
     priceInCents: 112000000,
     description:
-      "Hoodie oversize de corte pesado con capucha estructurada. Confeccionado en algodon premium de 450gsm con acabado cepillado interior. Silueta droopy con hombros caidos y mangas extra largas. El negro absoluto que define nuestra identidad.",
+      "Hoodie oversize de corte pesado con capucha estructurada. Confeccionado en algodón premium de 450gsm con acabado cepillado interior. Silueta droopy con hombros caídos y mangas extra largas. El negro absoluto que define nuestra identidad.",
     details: [
-      "100% Algodon Premium 450gsm",
-      "Corte oversize con hombros caidos",
+      "100% Algodón Premium 450gsm",
+      "Corte oversize con hombros caídos",
       "Capucha doble capa estructurada",
       "Costuras reforzadas en contraste",
       "Etiqueta bordada NOIR URBANO",
@@ -42,13 +42,13 @@ export const products: Product[] = [
     price: 880000,
     priceInCents: 88000000,
     description:
-      "Pantalon cargo de corte wide leg en tela ripstop premium. Multiples bolsillos utilitarios con cierres metalicos negros. Cintura ajustable con trabillas reforzadas. Diseno funcional que fusiona la estetica militar con el lujo urbano.",
+      "Pantalón cargo de corte wide leg en tela ripstop premium. Múltiples bolsillos utilitarios con cierres metálicos negros. Cintura ajustable con trabillas reforzadas. Diseño funcional que fusiona la estética militar con el lujo urbano.",
     details: [
       "Tela Ripstop 280gsm",
       "Corte wide leg relajado",
       "6 bolsillos funcionales",
-      "Cierres metalicos matte black",
-      "Cintura elastica con cordon",
+      "Cierres metálicos matte black",
+      "Cintura elástica con cordón",
       "Hecho en Colombia",
     ],
     sizes: ["28", "30", "32", "34", "36", "38"],
@@ -63,10 +63,10 @@ export const products: Product[] = [
     price: 1360000,
     priceInCents: 136000000,
     description:
-      "Sneaker high-top con plataforma chunky de alto impacto. Upper en cuero premium con detalles en nylon balistico. Suela de goma vulcanizada con traccion extrema. El calzado que domina cualquier territorio urbano.",
+      "Sneaker high-top con plataforma chunky de alto impacto. Upper en cuero premium con detalles en nylon balístico. Suela de goma vulcanizada con tracción extrema. El calzado que domina cualquier territorio urbano.",
     details: [
       "Upper en cuero premium",
-      "Detalles en nylon balistico",
+      "Detalles en nylon balístico",
       "Suela plataforma 5cm",
       "Plantilla memory foam",
       "Sistema de cordones reforzado",
@@ -84,9 +84,9 @@ export const products: Product[] = [
     price: 380000,
     priceInCents: 38000000,
     description:
-      "Camiseta oversize de peso medio en algodon premium 240gsm. Corte boxy con hombros caidos y cuello reforzado. Minimalismo absoluto en negro puro. La base perfecta para cualquier outfit urbano.",
+      "Camiseta oversize de peso medio en algodón premium 240gsm. Corte boxy con hombros caídos y cuello reforzado. Minimalismo absoluto en negro puro. La base perfecta para cualquier outfit urbano.",
     details: [
-      "100% Algodon Premium 240gsm",
+      "100% Algodón Premium 240gsm",
       "Corte boxy oversize",
       "Cuello reforzado doble costura",
       "Etiquetas heat-sealed",
@@ -126,12 +126,12 @@ export const products: Product[] = [
     price: 1520000,
     priceInCents: 152000000,
     description:
-      "Chaqueta bomber oversize en nylon balistico premium. Forro polar de alta calidad para frio moderado. Multiples bolsillos interiores y exteriores. La pieza statement que completa cualquier look.",
+      "Chaqueta bomber oversize en nylon balístico premium. Forro polar de alta calidad para frío moderado. Múltiples bolsillos interiores y exteriores. La pieza statement que completa cualquier look.",
     details: [
-      "Nylon Balistico 300gsm",
+      "Nylon Balístico 300gsm",
       "Forro polar premium",
       "Corte oversize bomber",
-      "Cierres metalicos YKK matte black",
+      "Cierres metálicos YKK matte black",
       "Bolsillos interiores secretos",
       "Hecho en Colombia",
     ],
@@ -147,12 +147,12 @@ export const products: Product[] = [
     price: 1160000,
     priceInCents: 116000000,
     description:
-      "Sneaker low-top con silueta chunky moderna. Upper en malla tecnica con overlays de cuero sintetico. Suela de goma con sistema de amortiguacion. Comodidad extrema con estetica agresiva.",
+      "Sneaker low-top con silueta chunky moderna. Upper en malla técnica con overlays de cuero sintético. Suela de goma con sistema de amortiguación. Comodidad extrema con estética agresiva.",
     details: [
-      "Upper en malla tecnica",
-      "Overlays de cuero sintetico",
+      "Upper en malla técnica",
+      "Overlays de cuero sintético",
       "Suela chunky 4cm",
-      "Sistema de amortiguacion",
+      "Sistema de amortiguación",
       "Cordones planos reforzados",
       "Hecho en Colombia",
     ],

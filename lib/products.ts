@@ -94,7 +94,7 @@ export const products: Product[] = [
       "Hecho en Colombia",
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    images: ["/images/product-hoodie.jpg"],
+    images: ["/images/Void tee.png"],
     inStock: true,
   },
   {
@@ -115,7 +115,7 @@ export const products: Product[] = [
       "Hecho en Colombia",
     ],
     sizes: ["28", "30", "32", "34", "36", "38"],
-    images: ["/images/product-pants.jpg"],
+    images: ["/images/Tacticals shorts.png"],
     inStock: true,
   },
   {
@@ -136,7 +136,7 @@ export const products: Product[] = [
       "Hecho en Colombia",
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    images: ["/images/product-hoodie.jpg"],
+    images: ["/images/¨Phantom jaket.png"],
     inStock: true,
   },
   {
@@ -157,7 +157,7 @@ export const products: Product[] = [
       "Hecho en Colombia",
     ],
     sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
-    images: ["/images/product-shoes.jpg"],
+    images: ["/images/Nigth runner.png"],
     inStock: true,
   },
 ];

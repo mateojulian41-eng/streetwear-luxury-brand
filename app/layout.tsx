@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Bebas_Neue } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { CursorFollower } from "@/components/cursor-follower";
+import { AnimatedGradient } from "@/components/animated-gradient";
+import { FloatingParticles } from "@/components/floating-particles";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -49,6 +51,8 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${bebasNeue.variable} font-sans antialiased`}
       >
+        <AnimatedGradient />
+        <FloatingParticles />
         <CursorFollower />
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}

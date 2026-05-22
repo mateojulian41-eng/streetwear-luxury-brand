@@ -23,6 +23,7 @@ export function ProductCard({
   const [isHovered, setIsHovered] = useState(false);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
+  const [isTouch, setIsTouch] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -51,6 +52,18 @@ export function ProductCard({
     setIsHovered(true);
   };
 
+  const handleTouchStart = () => {
+    setIsTouch(true);
+    setIsHovered(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsTouch(false);
+    setIsHovered(false);
+    setRotateX(0);
+    setRotateY(0);
+  };
+
   const content = (
     <div
       ref={cardRef}
@@ -58,8 +71,12 @@ export function ProductCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       style={{
-        transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+        transform: isTouch
+          ? "none"
+          : `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
         transition: isHovered
           ? "transform 0.1s ease-out"
           : "transform 0.5s ease-out",

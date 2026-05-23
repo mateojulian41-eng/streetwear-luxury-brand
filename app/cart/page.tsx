@@ -42,7 +42,7 @@ export default function CartPage() {
   };
 
   const subtotal = getTotal();
-  const shipping = subtotal >= 1600000 ? 0 : 60000;
+  const shipping = subtotal >= 800000 ? 0 : 25000;
   const total = subtotal + shipping - discountAmount;
 
   return (
@@ -236,7 +236,7 @@ export default function CartPage() {
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Envío</span>
                         <span>
-                          {subtotal >= 1600000
+                          {subtotal >= 800000
                             ? "Gratis"
                             : formatPrice(shipping)}
                         </span>

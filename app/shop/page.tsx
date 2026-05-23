@@ -59,7 +59,7 @@ export default function ShopPage() {
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6">
           <div className="max-w-7xl mx-auto">
             <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-              COLECCION COMPLETA
+              COLECCIÓN COMPLETA
             </p>
             <h1 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl lg:text-8xl leading-none mb-8">
               SHOP

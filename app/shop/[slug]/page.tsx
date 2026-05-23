@@ -242,14 +242,14 @@ export default function ProductPage({
                       STOCK DISPONIBLE
                     </span>
                     <span className="text-sm font-medium text-foreground">
-                      {Math.floor(Math.random() * 20) + 5} / 100
+                      {product.id.length * 3 + 12} / 100
                     </span>
                   </div>
                   <div className="h-2 bg-border/50 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-foreground transition-all duration-500"
                       style={{
-                        width: `${Math.floor(Math.random() * 30) + 10}%`,
+                        width: `${product.id.length * 3 + 12}%`,
                       }}
                     />
                   </div>
@@ -266,7 +266,7 @@ export default function ProductPage({
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <p>• Envíos a todo Colombia</p>
                     <p>• 3-5 días hábiles</p>
-                    <p>• Envío gratis en compras superiores a $1,600,000 COP</p>
+                    <p>• Envío gratis en compras superiores a $800,000 COP</p>
                   </div>
                 </div>
 

@@ -10,22 +10,36 @@ import { products, formatPrice } from "@/lib/products";
 import { useState } from "react";
 
 type FilterType = "all" | "ropa" | "calzado";
+type SortType = "default" | "price-asc" | "price-desc" | "name-asc";
 
 export default function ShopPage() {
   const [filter, setFilter] = useState<FilterType>("all");
+  const [sort, setSort] = useState<SortType>("default");
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000000]);
 
-  const filteredProducts = products.filter((product) => {
-    if (filter === "all") return true;
-    if (filter === "ropa") {
-      return (
-        product.category.toLowerCase().includes("oversize") ||
-        product.category.toLowerCase().includes("pants")
-      );
-    }
-    if (filter === "calzado") {
-      return product.category.toLowerCase().includes("footwear");
-    }
-    return true;
+  const filteredProducts = products
+    .filter((product) => {
+      if (filter === "all") return true;
+      if (filter === "ropa") {
+        return (
+          product.category.toLowerCase().includes("oversize") ||
+          product.category.toLowerCase().includes("pants")
+        );
+      }
+      if (filter === "calzado") {
+        return product.category.toLowerCase().includes("footwear");
+      }
+      return true;
+    })
+    .filter((product) => {
+      return product.price >= priceRange[0] && product.price <= priceRange[1];
+    });
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sort === "price-asc") return a.price - b.price;
+    if (sort === "price-desc") return b.price - a.price;
+    if (sort === "name-asc") return a.name.localeCompare(b.name);
+    return 0;
   });
 
   return (
@@ -62,49 +76,66 @@ export default function ShopPage() {
             {/* Filters */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
               <p className="text-sm text-muted-foreground">
-                {filteredProducts.length} productos
+                {sortedProducts.length} productos
               </p>
-              <div className="flex items-center gap-4">
-                <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
-                  FILTRAR:
-                </span>
-                <button
-                  onClick={() => setFilter("all")}
-                  className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
-                    filter === "all"
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
-                  }`}
-                >
-                  TODOS
-                </button>
-                <button
-                  onClick={() => setFilter("ropa")}
-                  className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
-                    filter === "ropa"
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
-                  }`}
-                >
-                  ROPA
-                </button>
-                <button
-                  onClick={() => setFilter("calzado")}
-                  className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
-                    filter === "calzado"
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
-                  }`}
-                >
-                  CALZADO
-                </button>
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="flex items-center gap-4">
+                  <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
+                    FILTRAR:
+                  </span>
+                  <button
+                    onClick={() => setFilter("all")}
+                    className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
+                      filter === "all"
+                        ? "border-foreground bg-foreground text-background"
+                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                    }`}
+                  >
+                    TODOS
+                  </button>
+                  <button
+                    onClick={() => setFilter("ropa")}
+                    className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
+                      filter === "ropa"
+                        ? "border-foreground bg-foreground text-background"
+                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                    }`}
+                  >
+                    ROPA
+                  </button>
+                  <button
+                    onClick={() => setFilter("calzado")}
+                    className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
+                      filter === "calzado"
+                        ? "border-foreground bg-foreground text-background"
+                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                    }`}
+                  >
+                    CALZADO
+                  </button>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
+                    ORDENAR:
+                  </span>
+                  <select
+                    value={sort}
+                    onChange={(e) => setSort(e.target.value as SortType)}
+                    className="text-[11px] tracking-[0.2em] px-4 py-2 border border-border bg-background text-foreground focus:outline-none focus:border-foreground transition-colors"
+                  >
+                    <option value="default">Defecto</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                    <option value="name-asc">Nombre: A-Z</option>
+                  </select>
+                </div>
               </div>
             </div>
 
             {/* Grid */}
-            {filteredProducts.length > 0 ? (
+            {sortedProducts.length > 0 ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                {filteredProducts.map((product, index) => (
+                {sortedProducts.map((product, index) => (
                   <ScrollReveal
                     key={product.id}
                     direction="up"

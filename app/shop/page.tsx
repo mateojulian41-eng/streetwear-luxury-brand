@@ -3,11 +3,12 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ProductCard } from "@/components/product-card";
+import { SkeletonCard } from "@/components/skeleton-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { products, formatPrice } from "@/lib/products";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type FilterType = "all" | "ropa" | "calzado";
 type SortType = "default" | "price-asc" | "price-desc" | "name-asc";
@@ -16,6 +17,13 @@ export default function ShopPage() {
   const [filter, setFilter] = useState<FilterType>("all");
   const [sort, setSort] = useState<SortType>("default");
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000000]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredProducts = products
     .filter((product) => {
@@ -133,7 +141,13 @@ export default function ShopPage() {
             </div>
 
             {/* Grid */}
-            {sortedProducts.length > 0 ? (
+            {isLoading ? (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                {[...Array(6)].map((_, index) => (
+                  <SkeletonCard key={index} />
+                ))}
+              </div>
+            ) : sortedProducts.length > 0 ? (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 {sortedProducts.map((product, index) => (
                   <ScrollReveal

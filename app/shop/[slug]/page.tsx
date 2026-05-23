@@ -137,9 +137,16 @@ export default function ProductPage({
                   {product.name}
                 </h1>
 
-                <p className="font-[family-name:var(--font-display)] text-3xl mb-8">
-                  {formatPrice(product.price)}
-                </p>
+                <div className="flex items-center gap-4 mb-8">
+                  <p className="font-[family-name:var(--font-display)] text-3xl">
+                    {formatPrice(product.price)}
+                  </p>
+                  {!product.inStock && (
+                    <span className="px-3 py-1 bg-destructive/10 border border-destructive/30 text-destructive text-[10px] tracking-[0.2em] uppercase">
+                      Agotado
+                    </span>
+                  )}
+                </div>
 
                 <p className="text-muted-foreground leading-relaxed mb-10">
                   {product.description}
@@ -153,7 +160,7 @@ export default function ProductPage({
                     </p>
                     <button
                       onClick={() => setShowSizeGuide(!showSizeGuide)}
-                      className="text-[10px] tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-[10px] tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
                     >
                       GUÍA DE TALLAS
                     </button>
@@ -163,16 +170,28 @@ export default function ProductPage({
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}
-                        className={`w-14 h-14 border text-sm tracking-wider transition-all duration-300 ${
+                        disabled={!product.inStock}
+                        className={`w-14 h-14 border text-sm tracking-wider transition-all duration-300 relative ${
                           selectedSize === size
-                            ? "border-foreground bg-foreground text-background"
-                            : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                            ? "border-foreground bg-foreground text-background shadow-premium"
+                            : !product.inStock
+                              ? "border-border/30 text-muted-foreground/30 cursor-not-allowed"
+                              : "border-border text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                         }`}
                       >
                         {size}
+                        {selectedSize === size && (
+                          <span className="absolute -top-1 -right-1 w-2 h-2 bg-foreground rounded-full" />
+                        )}
                       </button>
                     ))}
                   </div>
+                  {selectedSize && (
+                    <p className="text-[10px] text-muted-foreground mt-3">
+                      Talla seleccionada:{" "}
+                      <span className="text-foreground">{selectedSize}</span>
+                    </p>
+                  )}
                 </div>
 
                 {/* Size Guide Modal */}
@@ -185,14 +204,16 @@ export default function ProductPage({
                 {/* Add to Cart */}
                 <Button
                   onClick={handleAddToCart}
-                  disabled={!selectedSize}
-                  className="w-full h-16 text-[11px] tracking-[0.3em] disabled:opacity-50 transition-all duration-300"
+                  disabled={!selectedSize || !product.inStock}
+                  className="w-full h-16 text-[11px] tracking-[0.3em] disabled:opacity-50 disabled:cursor-not-allowed shadow-premium hover:shadow-premium-lg transition-all duration-300"
                 >
                   {added ? (
                     <>
                       <Check className="w-4 h-4 mr-2" />
                       AGREGADO AL CARRITO
                     </>
+                  ) : !product.inStock ? (
+                    "AGOTADO"
                   ) : (
                     <>
                       <ShoppingBag className="w-4 h-4 mr-2" />
@@ -201,7 +222,7 @@ export default function ProductPage({
                   )}
                 </Button>
 
-                {!selectedSize && (
+                {!selectedSize && product.inStock && (
                   <p className="text-xs text-muted-foreground mt-3 text-center">
                     Selecciona una talla para continuar
                   </p>
@@ -212,14 +233,16 @@ export default function ProductPage({
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-6">
                     DETALLES DEL PRODUCTO
                   </p>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {product.details.map((detail, index) => (
                       <li
                         key={index}
-                        className="flex items-start gap-3 text-sm text-muted-foreground"
+                        className="flex items-start gap-3 text-sm text-muted-foreground group"
                       >
-                        <span className="w-1 h-1 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                        {detail}
+                        <span className="w-1.5 h-1.5 bg-foreground/50 rounded-full mt-2 flex-shrink-0 group-hover:bg-foreground transition-colors" />
+                        <span className="group-hover:text-foreground transition-colors">
+                          {detail}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -227,33 +250,44 @@ export default function ProductPage({
 
                 {/* Tags */}
                 <div className="mt-10 flex flex-wrap gap-3">
-                  <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-muted-foreground">
-                    EDICION LIMITADA
+                  <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors">
+                    EDICIÓN LIMITADA
                   </span>
-                  <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-muted-foreground">
+                  <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors">
                     HECHO EN COLOMBIA
                   </span>
+                  {product.inStock && (
+                    <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-foreground hover:border-foreground transition-colors">
+                      EN STOCK
+                    </span>
+                  )}
                 </div>
 
                 {/* Stock Counter */}
-                <div className="mt-8 p-4 bg-card/30 border border-border/30">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="mt-8 p-5 bg-card/30 border border-border/30 backdrop-blur-sm">
+                  <div className="flex items-center justify-between mb-3">
                     <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
                       STOCK DISPONIBLE
                     </span>
                     <span className="text-sm font-medium text-foreground">
-                      {product.id.length * 3 + 12} / 100
+                      {product.inStock
+                        ? `${product.id.length * 3 + 12} / 100`
+                        : "0 / 100"}
                     </span>
                   </div>
                   <div className="h-2 bg-border/50 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-foreground transition-all duration-500"
+                      className={`h-full transition-all duration-500 ${
+                        product.inStock ? "bg-foreground" : "bg-destructive"
+                      }`}
                       style={{
-                        width: `${product.id.length * 3 + 12}%`,
+                        width: product.inStock
+                          ? `${product.id.length * 3 + 12}%`
+                          : "0%",
                       }}
                     />
                   </div>
-                  <p className="text-[9px] text-muted-foreground mt-2">
+                  <p className="text-[9px] text-muted-foreground mt-3 leading-relaxed">
                     Solo 100 unidades por pieza. Cuando se agoten, no volverán.
                   </p>
                 </div>
@@ -263,10 +297,21 @@ export default function ProductPage({
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
                     ENVÍO
                   </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>• Envíos a todo Colombia</p>
-                    <p>• 3-5 días hábiles</p>
-                    <p>• Envío gratis en compras superiores a $800,000 COP</p>
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>Envíos a todo Colombia</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>3-5 días hábiles</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>
+                        Envío gratis en compras superiores a $800,000 COP
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -275,12 +320,27 @@ export default function ProductPage({
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
                     CUIDADO
                   </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>• Lavar a máquina en frío (máx 30°C)</p>
-                    <p>• No usar blanqueador</p>
-                    <p>• Secar a temperatura baja</p>
-                    <p>• Planchar a temperatura media</p>
-                    <p>• No lavar en seco</p>
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>Lavar a máquina en frío (máx 30°C)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>No usar blanqueador</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>Secar a temperatura baja</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>Planchar a temperatura media</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-foreground">•</span>
+                      <span>No lavar en seco</span>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -252,6 +252,25 @@ export default function ProductPage({
         </section>
       </ScrollReveal>
 
+      {/* Sticky Add to Cart for Mobile */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border p-4 md:hidden z-50">
+        <Button
+          size="lg"
+          className="w-full h-14 text-[11px] tracking-[0.3em]"
+          disabled={!selectedSize}
+          onClick={handleAddToCart}
+        >
+          {added ? (
+            "AGREGADO ✓"
+          ) : (
+            <>
+              <ShoppingBag className="w-4 h-4 mr-2" />
+              AGREGAR AL CARRITO
+            </>
+          )}
+        </Button>
+      </div>
+
       <Footer />
     </main>
   );

@@ -12,6 +12,7 @@ import { SearchBar } from "./search-bar";
 const navLinks = [
   { href: "/", label: "INICIO" },
   { href: "/shop", label: "SHOP" },
+  { href: "/nosotros", label: "NOSOTROS" },
   { href: "/contacto", label: "CONTACTO" },
 ];
 
@@ -103,7 +104,7 @@ export function Header() {
           {/* Mobile Menu */}
           <div
             className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-              mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
             <nav className="pt-6 pb-4 border-t border-border/50 mt-4">
@@ -112,9 +113,9 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block text-sm tracking-[0.25em] transition-all duration-300 py-3 ${
+                  className={`block text-sm tracking-[0.25em] transition-all duration-300 py-4 border-b border-border/30 last:border-0 ${
                     pathname === link.href
-                      ? "text-foreground"
+                      ? "text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                   style={{
@@ -125,8 +126,10 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <div className="pt-6 border-t border-border/50">
-              <SocialLinks />
+            <div className="pt-6 pb-4 border-t border-border/50">
+              <div className="flex items-center justify-center gap-6">
+                <SocialLinks />
+              </div>
             </div>
           </div>
         </div>

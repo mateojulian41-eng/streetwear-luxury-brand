@@ -18,7 +18,7 @@ export async function startCheckoutSession(cartItems: CartItem[]) {
 
     return {
       price_data: {
-        currency: "usd",
+        currency: "cop",
         product_data: {
           name: `${product.name} - Talla ${item.size}`,
           description: product.category,

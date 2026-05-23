@@ -273,7 +273,8 @@ export default function CheckoutPage() {
                             Talla: {item.size} | Cantidad: {item.quantity}
                           </p>
                           <p className="text-sm">
-                            {formatPrice(item.product.price * item.quantity)}
+                            {formatPrice(item.product.price * item.quantity)}{" "}
+                            COP
                           </p>
                         </div>
                       </div>
@@ -284,19 +285,21 @@ export default function CheckoutPage() {
                   <div className="space-y-4 mb-8 pt-8 border-t border-border">
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
-                      <span>{formatPrice(subtotal)}</span>
+                      <span>{formatPrice(subtotal)} COP</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Envío</span>
                       <span>
-                        {shipping === 0 ? "Gratis" : formatPrice(shipping)}
+                        {shipping === 0
+                          ? "Gratis"
+                          : `${formatPrice(shipping)} COP`}
                       </span>
                     </div>
                     <div className="h-px border-t border-border my-4" />
                     <div className="flex justify-between text-lg font-medium">
                       <span>Total</span>
                       <span className="font-[family-name:var(--font-display)]">
-                        {formatPrice(total)}
+                        {formatPrice(total)} COP
                       </span>
                     </div>
                   </div>

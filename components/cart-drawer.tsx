@@ -174,7 +174,7 @@ export function CartDrawer() {
                 </span>
               </div>
               <span className="font-[family-name:var(--font-display)] text-xl">
-                {formatPrice(getTotal())}
+                {formatPrice(getTotal())} COP
               </span>
             </div>
             <p className="text-[10px] text-muted-foreground">

@@ -219,7 +219,8 @@ export default function CartPage() {
 
                             {/* Price */}
                             <p className="font-[family-name:var(--font-display)] text-lg">
-                              {formatPrice(item.product.price * item.quantity)}
+                              {formatPrice(item.product.price * item.quantity)}{" "}
+                              COP
                             </p>
                           </div>
 
@@ -311,14 +312,14 @@ export default function CartPage() {
                         >
                           {subtotal >= 800000
                             ? "Gratis"
-                            : formatPrice(shipping)}
+                            : `${formatPrice(shipping)} COP`}
                         </span>
                       </div>
                       <div className="h-px border-t border-border my-4" />
                       <div className="flex justify-between text-lg font-medium">
                         <span>Total</span>
                         <span className="font-[family-name:var(--font-display)] text-xl">
-                          {formatPrice(total)}
+                          {formatPrice(total)} COP
                         </span>
                       </div>
                     </div>
@@ -349,12 +350,12 @@ export default function CartPage() {
                         </p>
                       </div>
                       <p className="text-sm text-muted-foreground">
-                        En compras superiores a $1,600,000 COP
+                        En compras superiores a $800,000 COP
                       </p>
                       {subtotal < 800000 && (
                         <p className="text-[10px] text-muted-foreground mt-2">
-                          Te faltan {formatPrice(800000 - subtotal)} para envío
-                          gratis
+                          Te faltan {formatPrice(800000 - subtotal)} COP para
+                          envío gratis
                         </p>
                       )}
                     </div>

@@ -139,7 +139,7 @@ export default function ProductPage({
 
                 <div className="flex items-center gap-4 mb-8">
                   <p className="font-[family-name:var(--font-display)] text-3xl">
-                    {formatPrice(product.price)}
+                    {formatPrice(product.price)} COP
                   </p>
                   {!product.inStock && (
                     <span className="px-3 py-1 bg-destructive/10 border border-destructive/30 text-destructive text-[10px] tracking-[0.2em] uppercase">

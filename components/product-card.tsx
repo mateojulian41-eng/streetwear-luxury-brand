@@ -156,7 +156,7 @@ export function ProductCard({
         </h3>
         <div className="flex items-center justify-between">
           <p className="text-sm text-muted-foreground font-light tracking-wide">
-            {price}
+            {price} COP
           </p>
           {!inStock && (
             <span className="text-[10px] text-destructive tracking-[0.2em] uppercase">

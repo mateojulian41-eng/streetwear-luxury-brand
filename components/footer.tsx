@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { SocialLinks } from "./social-links";
 import { ArrowUpRight, Mail } from "lucide-react";

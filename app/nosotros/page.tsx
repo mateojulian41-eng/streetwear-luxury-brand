@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SocialLinks } from "@/components/social-links";
+import { ArrowRight, MapPin, Award, Infinity } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -10,19 +11,28 @@ export default function AboutPage() {
 
       {/* Hero */}
       <ScrollReveal>
-        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 relative">
           <div className="max-w-7xl mx-auto">
-            <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-              SOBRE NOSOTROS
-            </p>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12 bg-foreground/30" />
+              <p className="text-[10px] tracking-[0.5em] text-muted-foreground">
+                SOBRE NOSOTROS
+              </p>
+            </div>
             <h1 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl lg:text-8xl leading-none mb-8">
               NOIR URBANO
             </h1>
-            <p className="text-muted-foreground max-w-xl leading-relaxed">
+            <p className="text-muted-foreground max-w-2xl leading-relaxed text-lg">
               Nacida en Cartagena, NOIR URBANO es una marca nativa de streetwear
               luxury que fusiona la crudeza de la cultura callejera con la
               elegancia del negro absoluto.
             </p>
+            <div className="flex items-center gap-3 mt-8">
+              <MapPin className="w-4 h-4 text-muted-foreground" />
+              <p className="text-sm text-muted-foreground tracking-[0.2em]">
+                CARTAGENA, COLOMBIA
+              </p>
+            </div>
           </div>
         </section>
       </ScrollReveal>
@@ -34,7 +44,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <ScrollReveal direction="up">
-        <section className="py-24 px-6">
+        <section className="py-24 px-6 bg-card/30">
           <div className="max-w-4xl mx-auto">
             <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6 text-center">
               NUESTRA HISTORIA
@@ -42,18 +52,19 @@ export default function AboutPage() {
             <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-center mb-12">
               DEL CAOS A LA ELEGANCIA
             </h2>
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>
-                NOIR URBANO nació de la necesidad de expresar una identidad única
-                en el panorama del streetwear colombiano. Fundada en Cartagena,
-                nuestra marca representa la convergencia entre la energía cruda
-                de las calles y la sofisticación del diseño contemporáneo.
+            <div className="space-y-8 text-muted-foreground leading-relaxed text-lg">
+              <p className="first-letter:text-5xl first-letter:font-[family-name:var(--font-display)] first-letter:text-foreground first-letter:float-left first-letter:mr-3 first-letter:mt-[-8px]">
+                NOIR URBANO nació de la necesidad de expresar una identidad
+                única en el panorama del streetwear colombiano. Fundada en
+                Cartagena, nuestra marca representa la convergencia entre la
+                energía cruda de las calles y la sofisticación del diseño
+                contemporáneo.
               </p>
               <p>
                 Cada pieza que creamos es una declaración de identidad. No
                 seguimos tendencias; las definimos. Nuestro enfoque en el negro
-                absoluto no es estético, es filosófico: representa la ausencia de
-                distracciones, la pureza de la forma, la esencia del diseño.
+                absoluto no es estético, es filosófico: representa la ausencia
+                de distracciones, la pureza de la forma, la esencia del diseño.
               </p>
               <p>
                 Trabajamos con materiales premium y técnicas de producción
@@ -76,30 +87,39 @@ export default function AboutPage() {
             <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-center mb-16">
               LO QUE NOS DEFINE
             </h2>
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="text-center">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center p-8 border border-border/50 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
+                <div className="w-16 h-16 mx-auto mb-6 border border-border/50 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
+                  <Award className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+                </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl mb-4">
                   AUTENTICIDAD
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   No imitamos, creamos. Cada diseño es una expresión genuina de
                   nuestra visión del streetwear.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="text-center p-8 border border-border/50 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
+                <div className="w-16 h-16 mx-auto mb-6 border border-border/50 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
+                  <Infinity className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+                </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl mb-4">
                   CALIDAD
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Materiales premium, producción artesanal, atención al detalle
                   en cada costura.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="text-center p-8 border border-border/50 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
+                <div className="w-16 h-16 mx-auto mb-6 border border-border/50 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
+                  <ArrowRight className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
+                </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl mb-4">
                   EXCLUSIVIDAD
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Ediciones limitadas de 100 unidades. Cuando se agotan, no
                   vuelven.
                 </p>
@@ -111,35 +131,35 @@ export default function AboutPage() {
 
       {/* Stats */}
       <ScrollReveal direction="up">
-        <section className="py-24 px-6 border-t border-border">
+        <section className="py-24 px-6 border-t border-border bg-card/30">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2">
+              <div className="p-6 border border-border/30 hover:border-foreground/30 transition-all duration-300 group">
+                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   100
                 </p>
                 <p className="text-[10px] tracking-[0.3em] text-muted-foreground">
                   UNIDADES POR PIEZA
                 </p>
               </div>
-              <div>
-                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2">
+              <div className="p-6 border border-border/30 hover:border-foreground/30 transition-all duration-300 group">
+                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   100%
                 </p>
                 <p className="text-[10px] tracking-[0.3em] text-muted-foreground">
                   HECHO EN COLOMBIA
                 </p>
               </div>
-              <div>
-                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2">
+              <div className="p-6 border border-border/30 hover:border-foreground/30 transition-all duration-300 group">
+                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   450gsm
                 </p>
                 <p className="text-[10px] tracking-[0.3em] text-muted-foreground">
                   ALGODÓN PREMIUM
                 </p>
               </div>
-              <div>
-                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2">
+              <div className="p-6 border border-border/30 hover:border-foreground/30 transition-all duration-300 group">
+                <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   ∞
                 </p>
                 <p className="text-[10px] tracking-[0.3em] text-muted-foreground">
@@ -161,12 +181,23 @@ export default function AboutPage() {
             <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl leading-tight mb-6">
               SÉ PARTE DE NOIR URBANO
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
               Síguenos en redes sociales para estar al tanto de nuevos drops,
               contenido exclusivo y detrás de cámaras.
             </p>
             <div className="flex items-center justify-center gap-6">
               <SocialLinks />
+            </div>
+            <div className="mt-12 pt-8 border-t border-border/50">
+              <p className="text-[10px] tracking-[0.2em] text-muted-foreground">
+                ¿Tienes preguntas?{" "}
+                <a
+                  href="mailto:info@noirurbano.com"
+                  className="text-foreground hover:underline underline-offset-4"
+                >
+                  Contáctanos
+                </a>
+              </p>
             </div>
           </div>
         </section>

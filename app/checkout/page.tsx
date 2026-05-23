@@ -38,13 +38,26 @@ export default function CheckoutPage() {
     e.preventDefault();
     setIsProcessing(true);
 
-    // Simulate processing
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const { startCheckoutSession } = await import("@/app/actions/stripe");
 
-    setIsProcessing(false);
-    clearCart();
-    // Redirect to success page
-    window.location.href = "/checkout/success";
+      const checkoutUrl = await startCheckoutSession(
+        items.map((item) => ({
+          productId: item.product.id,
+          size: item.size,
+          quantity: item.quantity,
+        })),
+        formData.email,
+        `${formData.firstName} ${formData.lastName}`,
+      );
+
+      // Redirect to Wompi checkout
+      window.location.href = checkoutUrl;
+    } catch (error) {
+      console.error("Error creating checkout session:", error);
+      setIsProcessing(false);
+      alert("Error al procesar el pago. Por favor intenta nuevamente.");
+    }
   };
 
   const subtotal = getTotal();

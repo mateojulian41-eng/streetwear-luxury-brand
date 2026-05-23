@@ -1,6 +1,6 @@
 "use server";
 
-import { stripe } from "@/lib/stripe";
+import { createWompiTransaction } from "@/lib/wompi";
 import { products } from "@/lib/products";
 
 interface CartItem {
@@ -9,32 +9,34 @@ interface CartItem {
   quantity: number;
 }
 
-export async function startCheckoutSession(cartItems: CartItem[]) {
-  const lineItems = cartItems.map((item) => {
+export async function startCheckoutSession(
+  cartItems: CartItem[],
+  customerEmail: string,
+  customerName: string,
+) {
+  // Calculate total amount in cents
+  const totalAmountInCents = cartItems.reduce((total, item) => {
     const product = products.find((p) => p.id === item.productId);
     if (!product) {
       throw new Error(`Product with id "${item.productId}" not found`);
     }
+    return total + product.priceInCents * item.quantity;
+  }, 0);
 
-    return {
-      price_data: {
-        currency: "cop",
-        product_data: {
-          name: `${product.name} - Talla ${item.size}`,
-          description: product.category,
-        },
-        unit_amount: product.priceInCents,
-      },
-      quantity: item.quantity,
-    };
-  });
+  // Generate unique reference
+  const reference = `NOIR-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  const session = await stripe.checkout.sessions.create({
-    line_items: lineItems,
-    mode: "payment",
-    success_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/checkout/success`,
-    cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/checkout`,
-  });
+  // Create Wompi transaction
+  const returnUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/checkout/success?reference=${reference}`;
 
-  return session.url;
+  const transaction = await createWompiTransaction(
+    totalAmountInCents,
+    "COP",
+    reference,
+    customerEmail,
+    customerName,
+    returnUrl,
+  );
+
+  return transaction.checkout_url;
 }

@@ -48,7 +48,7 @@ export default function CheckoutPage() {
   };
 
   const subtotal = getTotal();
-  const shipping = subtotal >= 1600000 ? 0 : 60000;
+  const shipping = subtotal >= 800000 ? 0 : 25000;
   const total = subtotal + shipping;
 
   if (items.length === 0) {

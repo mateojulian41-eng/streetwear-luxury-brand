@@ -72,9 +72,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
 };
 
 const spaceGrotesk = Space_Grotesk({

@@ -33,9 +33,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Set drop date to 7 days from now
-    const dropDate = new Date();
-    dropDate.setDate(dropDate.getDate() + 7);
+    // Set drop date to a fixed date (June 1, 2026)
+    const dropDate = new Date("2026-06-01T00:00:00");
 
     const timer = setInterval(() => {
       const now = new Date();
@@ -59,7 +58,6 @@ export default function Home() {
   }, []);
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <CursorFollower />
       <Header />
 
       {/* Hero Section */}

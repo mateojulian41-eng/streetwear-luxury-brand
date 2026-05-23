@@ -7,7 +7,6 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 import { SocialLinks } from "./social-links";
 import { useCartStore } from "@/lib/cart-store";
 import { CartDrawer } from "./cart-drawer";
-import { SearchBar } from "./search-bar";
 
 const navLinks = [
   { href: "/", label: "INICIO" },
@@ -68,7 +67,6 @@ export function Header() {
 
             {/* Right Side */}
             <div className="flex items-center gap-6">
-              <SearchBar />
               <div className="hidden md:block">
                 <SocialLinks />
               </div>

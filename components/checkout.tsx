@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
-import { useCallback } from 'react'
-import {
-  EmbeddedCheckout,
-  EmbeddedCheckoutProvider,
-} from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
+import { useCartStore } from "@/lib/cart-store";
+import { startCheckoutSession } from "../app/actions/stripe";
 
-import { startCheckoutSession } from '../app/actions/stripe'
+export default function Checkout() {
+  const { items } = useCartStore();
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+  const handleCheckout = async () => {
+    const cartItems = items.map((item) => ({
+      productId: item.product.id,
+      size: item.size,
+      quantity: item.quantity,
+    }));
 
-export default function Checkout({ productId }: { productId: string }) {
-  const startCheckoutSessionForProduct = useCallback(
-    () => startCheckoutSession(productId),
-    [productId],
-  )
+    const checkoutUrl = await startCheckoutSession(cartItems);
+    if (checkoutUrl) {
+      window.location.href = checkoutUrl;
+    }
+  };
 
   return (
-    <div id="checkout">
-      <EmbeddedCheckoutProvider
-        stripe={stripePromise}
-        options={{ clientSecret: startCheckoutSessionForProduct }}
-      >
-        <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider>
-    </div>
-  )
+    <button
+      onClick={handleCheckout}
+      className="w-full h-14 text-[11px] tracking-[0.3em] bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
+    >
+      PROCEDER AL PAGO
+    </button>
+  );
 }

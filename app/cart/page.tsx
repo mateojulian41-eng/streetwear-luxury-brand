@@ -9,10 +9,14 @@ import Link from "next/link";
 import { useCartStore } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/products";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, getTotal, clearCart } =
     useCartStore();
+  const [discountCode, setDiscountCode] = useState("");
+  const [discountApplied, setDiscountApplied] = useState(false);
+  const [discountAmount, setDiscountAmount] = useState(0);
 
   const handleQuantityChange = (
     productId: string,
@@ -22,6 +26,24 @@ export default function CartPage() {
     if (newQuantity < 1) return;
     updateQuantity(productId, size, newQuantity);
   };
+
+  const handleApplyDiscount = () => {
+    // Simple discount logic for demo
+    if (discountCode.toUpperCase() === "NOIR10") {
+      setDiscountAmount(getTotal() * 0.1);
+      setDiscountApplied(true);
+    } else if (discountCode.toUpperCase() === "NOIR20") {
+      setDiscountAmount(getTotal() * 0.2);
+      setDiscountApplied(true);
+    } else {
+      setDiscountAmount(0);
+      setDiscountApplied(false);
+    }
+  };
+
+  const subtotal = getTotal();
+  const shipping = subtotal >= 1600000 ? 0 : 60000;
+  const total = subtotal + shipping - discountAmount;
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -169,26 +191,61 @@ export default function CartPage() {
                       RESUMEN
                     </h3>
 
+                    {/* Discount Code */}
+                    <div className="mb-6">
+                      <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-3">
+                        CÓDIGO DE DESCUENTO
+                      </p>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={discountCode}
+                          onChange={(e) => setDiscountCode(e.target.value)}
+                          placeholder="NOIR10 o NOIR20"
+                          className="flex-1 px-4 py-3 border border-border bg-background text-foreground text-sm focus:outline-none focus:border-foreground transition-colors"
+                        />
+                        <button
+                          onClick={handleApplyDiscount}
+                          className="px-6 py-3 border border-border hover:border-foreground transition-colors text-[10px] tracking-[0.2em]"
+                        >
+                          APLICAR
+                        </button>
+                      </div>
+                      {discountApplied && (
+                        <p className="text-[9px] text-green-500 mt-2">
+                          ✓ Descuento aplicado
+                        </p>
+                      )}
+                    </div>
+
                     <div className="space-y-4 mb-8">
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Subtotal</span>
-                        <span>{formatPrice(getTotal())}</span>
+                        <span>{formatPrice(subtotal)}</span>
                       </div>
+                      {discountApplied && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-muted-foreground">
+                            Descuento
+                          </span>
+                          <span className="text-green-500">
+                            -{formatPrice(discountAmount)}
+                          </span>
+                        </div>
+                      )}
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Envío</span>
                         <span>
-                          {getTotal() >= 1600000
+                          {subtotal >= 1600000
                             ? "Gratis"
-                            : formatPrice(60000)}
+                            : formatPrice(shipping)}
                         </span>
                       </div>
                       <div className="h-px border-t border-border my-4" />
                       <div className="flex justify-between text-lg font-medium">
                         <span>Total</span>
                         <span className="font-[family-name:var(--font-display)]">
-                          {formatPrice(
-                            getTotal() + (getTotal() >= 1600000 ? 0 : 60000),
-                          )}
+                          {formatPrice(total)}
                         </span>
                       </div>
                     </div>

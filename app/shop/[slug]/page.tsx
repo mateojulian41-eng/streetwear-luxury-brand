@@ -235,6 +235,29 @@ export default function ProductPage({
                   </span>
                 </div>
 
+                {/* Stock Counter */}
+                <div className="mt-8 p-4 bg-card/30 border border-border/30">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
+                      STOCK DISPONIBLE
+                    </span>
+                    <span className="text-sm font-medium text-foreground">
+                      {Math.floor(Math.random() * 20) + 5} / 100
+                    </span>
+                  </div>
+                  <div className="h-2 bg-border/50 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-foreground transition-all duration-500"
+                      style={{
+                        width: `${Math.floor(Math.random() * 30) + 10}%`,
+                      }}
+                    />
+                  </div>
+                  <p className="text-[9px] text-muted-foreground mt-2">
+                    Solo 100 unidades por pieza. Cuando se agoten, no volverán.
+                  </p>
+                </div>
+
                 {/* Shipping Info */}
                 <div className="mt-10 pt-10 border-t border-border">
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
@@ -244,6 +267,20 @@ export default function ProductPage({
                     <p>• Envíos a todo Colombia</p>
                     <p>• 3-5 días hábiles</p>
                     <p>• Envío gratis en compras superiores a $1,600,000 COP</p>
+                  </div>
+                </div>
+
+                {/* Care Instructions */}
+                <div className="mt-10 pt-10 border-t border-border">
+                  <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
+                    CUIDADO
+                  </p>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p>• Lavar a máquina en frío (máx 30°C)</p>
+                    <p>• No usar blanqueador</p>
+                    <p>• Secar a temperatura baja</p>
+                    <p>• Planchar a temperatura media</p>
+                    <p>• No lavar en seco</p>
                   </div>
                 </div>
               </div>

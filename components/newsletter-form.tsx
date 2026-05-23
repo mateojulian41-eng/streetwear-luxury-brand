@@ -1,27 +1,40 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { useState } from "react";
+import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
 
 export function NewsletterForm() {
-  const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    setError("");
+
+    if (!validateEmail(email)) {
+      setError("Por favor ingresa un email válido");
+      return;
+    }
+
+    setIsLoading(true);
 
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsLoading(false)
-    setIsSubmitted(true)
-    setEmail("")
+    setIsLoading(false);
+    setIsSubmitted(true);
+    setEmail("");
 
     // Reset success state after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000)
-  }
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
 
   return (
     <div className="max-w-md mx-auto">
@@ -34,7 +47,11 @@ export function NewsletterForm() {
             ¡Suscrito!
           </h3>
           <p className="text-muted-foreground">
-            Gracias por unirte a NOIR URBANO
+            Gracias por unirte a NOIR URBANO. Recibirás actualizaciones
+            exclusivas.
+          </p>
+          <p className="text-[10px] text-muted-foreground mt-4">
+            Código de descuento: NOIR10
           </p>
         </div>
       ) : (
@@ -43,10 +60,17 @@ export function NewsletterForm() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError("");
+              }}
               placeholder="Tu email"
               required
-              className="flex-1 bg-card/50 border border-border/50 px-6 py-4 text-sm focus:border-foreground/50 focus:outline-none transition-all duration-300"
+              className={`flex-1 bg-card/50 border px-6 py-4 text-sm focus:outline-none transition-all duration-300 ${
+                error
+                  ? "border-red-500/50 focus:border-red-500"
+                  : "border-border/50 focus:border-foreground/50"
+              }`}
             />
             <button
               type="submit"
@@ -60,11 +84,18 @@ export function NewsletterForm() {
               )}
             </button>
           </div>
+          {error && (
+            <div className="flex items-center gap-2 text-red-500 text-[10px]">
+              <AlertCircle className="w-3 h-3" />
+              {error}
+            </div>
+          )}
           <p className="text-[10px] text-muted-foreground tracking-wider">
-            Al suscribirte, aceptas recibir actualizaciones exclusivas
+            Al suscribirte, aceptas recibir actualizaciones exclusivas y ofertas
+            especiales.
           </p>
         </form>
       )}
     </div>
-  )
+  );
 }

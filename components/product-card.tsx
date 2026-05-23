@@ -11,6 +11,8 @@ interface ProductCardProps {
   price: string;
   image: string;
   slug?: string;
+  isNew?: boolean;
+  inStock?: boolean;
 }
 
 export function ProductCard({
@@ -19,6 +21,8 @@ export function ProductCard({
   price,
   image,
   slug,
+  isNew = false,
+  inStock = true,
 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [rotateX, setRotateX] = useState(0);
@@ -124,15 +128,29 @@ export function ProductCard({
         </div>
 
         {/* Category Badge */}
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 flex gap-2">
           <span className="px-3 py-1.5 bg-background/90 backdrop-blur-md border border-border/50 text-[9px] tracking-[0.25em] text-muted-foreground uppercase shadow-sm">
             {category}
           </span>
+          {isNew && (
+            <span className="px-3 py-1.5 bg-foreground/90 backdrop-blur-md border border-foreground/50 text-[9px] tracking-[0.25em] text-background uppercase shadow-sm">
+              NUEVO
+            </span>
+          )}
         </div>
+
+        {/* Stock Indicator */}
+        {!inStock && (
+          <div className="absolute top-4 right-4">
+            <span className="px-3 py-1.5 bg-destructive/90 backdrop-blur-md border border-destructive/50 text-[9px] tracking-[0.25em] text-background uppercase shadow-sm">
+              AGOTADO
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Product Info */}
-      <div className="mt-5 space-y-2">
+      <div className="mt-5 space-y-3">
         <h3 className="font-[family-name:var(--font-display)] text-lg md:text-xl text-foreground leading-tight tracking-tight group-hover:text-foreground/90 transition-colors">
           {name}
         </h3>
@@ -140,8 +158,13 @@ export function ProductCard({
           <p className="text-sm text-muted-foreground font-light tracking-wide">
             {price}
           </p>
-          <div className="h-px flex-1 mx-4 bg-border/30" />
+          {!inStock && (
+            <span className="text-[10px] text-destructive tracking-[0.2em] uppercase">
+              Sin stock
+            </span>
+          )}
         </div>
+        {inStock && <div className="h-px bg-border/30" />}
       </div>
     </div>
   );

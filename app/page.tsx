@@ -143,18 +143,18 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="h-14 px-10 text-[11px] tracking-[0.3em]"
+              className="h-14 px-10 text-[11px] tracking-[0.3em] shadow-premium hover:shadow-premium-lg transition-all duration-300"
             >
               <Link href="/shop">
-                EXPLORAR COLECCION
+                EXPLORAR COLECCIÓN
                 <ArrowRight className="w-4 h-4 ml-3" />
               </Link>
             </Button>
             <Link
-              href="/contacto"
+              href="/nosotros"
               className="text-[11px] tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 py-3"
             >
-              CONTACTAR
+              NOSOTROS
               <ArrowUpRight className="w-3 h-3" />
             </Link>
           </div>

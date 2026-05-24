@@ -488,18 +488,23 @@ export default function Home() {
 
       {/* Lookbook Section */}
       <ScrollReveal>
-        <section className="py-28 md:py-44 px-6 border-t border-border">
+        <section className="py-28 md:py-44 px-6 border-t border-border bg-gradient-to-b from-background to-card/30">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-                LOOKBOOK
-              </p>
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+                <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                  LOOKBOOK
+                </p>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+              </div>
               <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl lg:text-7xl leading-none">
                 ESTETICA
                 <br />
                 <span
+                  className="block"
                   style={{
-                    WebkitTextStroke: "1px oklch(0.40 0 0)",
+                    WebkitTextStroke: "2px oklch(0.40 0 0)",
                     color: "transparent",
                   }}
                 >
@@ -509,65 +514,133 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group">
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
                   src="/images/product-hoodie.jpg"
-                  alt="Lookbook 1"
+                  alt="SHADOW HOODIE"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    SHADOW HOODIE
+                  </p>
+                </div>
               </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group md:row-span-2">
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group md:row-span-2 shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
-                  src="/images/hero-model.jpg"
-                  alt="Lookbook 2"
+                  src="/images/phantom-jacket.png"
+                  alt="PHANTOM JACKET"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    PHANTOM JACKET
+                  </p>
+                </div>
               </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group">
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
                   src="/images/product-pants.jpg"
-                  alt="Lookbook 3"
+                  alt="HEAVY CARGO"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    HEAVY CARGO
+                  </p>
+                </div>
               </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group">
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
                   src="/images/product-shoes.jpg"
-                  alt="Lookbook 4"
+                  alt="URBAN STOMPERS"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    URBAN STOMPERS
+                  </p>
+                </div>
               </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group">
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
+                <Image
+                  src="/images/void-tee.png"
+                  alt="VOID TEE"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    VOID TEE
+                  </p>
+                </div>
+              </div>
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
+                <Image
+                  src="/images/tactical-shorts.png"
+                  alt="TACTICAL SHORTS"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    TACTICAL SHORTS
+                  </p>
+                </div>
+              </div>
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
+                <Image
+                  src="/images/night-runner.png"
+                  alt="NIGHT RUNNER"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    NIGHT RUNNER
+                  </p>
+                </div>
+              </div>
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
                   src="/images/stealth-tee.jpg"
-                  alt="Lookbook 5"
+                  alt="STEALTH TEE"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
-              </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group">
-                <Image
-                  src="/images/product-pants.jpg"
-                  alt="Lookbook 6"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  quality={85}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    STEALTH TEE
+                  </p>
+                </div>
               </div>
             </div>
           </div>

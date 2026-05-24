@@ -160,6 +160,27 @@ export const products: Product[] = [
     images: ["/images/night-runner.png"],
     inStock: true,
   },
+  {
+    id: "stealth-tee",
+    slug: "stealth-tee",
+    name: "STEALTH TEE",
+    category: "Oversize Collection",
+    price: 420000,
+    priceInCents: 42000000,
+    description:
+      "Camiseta oversize de peso pesado en algodón premium 280gsm. Corte boxy con hombros caídos y cuello reforzado. Minimalismo absoluto con detalles sutiles. La pieza esencial para cualquier outfit urbano.",
+    details: [
+      "100% Algodón Premium 280gsm",
+      "Corte boxy oversize",
+      "Cuello reforzado triple costura",
+      "Etiquetas heat-sealed",
+      "Peso pesado para durabilidad",
+      "Hecho en Colombia",
+    ],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    images: ["/images/stealth-tee.jpg"],
+    inStock: true,
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {

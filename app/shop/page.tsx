@@ -56,15 +56,35 @@ export default function ShopPage() {
 
       {/* Hero */}
       <ScrollReveal>
-        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-              COLECCIÓN COMPLETA
-            </p>
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-gradient-to-b from-background to-card/30 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-[20%] right-[10%] w-48 h-48 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "2s" }}
+            />
+          </div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                COLECCIÓN COMPLETA
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
             <h1 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl lg:text-8xl leading-none mb-8">
               SHOP
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                COLLECTION
+              </span>
             </h1>
-            <p className="text-muted-foreground max-w-xl leading-relaxed">
+            <p className="text-muted-foreground max-w-xl leading-relaxed text-sm md:text-base">
               Piezas exclusivas diseñadas para quienes buscan autenticidad en el
               lujo urbano. Cada prenda es una declaración de identidad.
             </p>
@@ -81,55 +101,58 @@ export default function ShopPage() {
       <ScrollReveal direction="up">
         <section className="py-16 md:py-24 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Filters */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
-              <p className="text-sm text-muted-foreground">
-                {sortedProducts.length} productos
+            {/* Enhanced Filters */}
+            <div className="flex flex-wrap items-center justify-between gap-6 mb-16 p-6 border border-border/30 bg-card/30 backdrop-blur-sm rounded-lg">
+              <p className="text-sm text-foreground font-medium">
+                <span className="text-foreground/60">
+                  {sortedProducts.length}
+                </span>{" "}
+                productos
               </p>
-              <div className="flex flex-wrap items-center gap-4">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="flex items-center gap-3">
                   <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
                     FILTRAR:
                   </span>
                   <button
                     onClick={() => setFilter("all")}
-                    className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
+                    className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
                       filter === "all"
-                        ? "border-foreground bg-foreground text-background"
-                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                        ? "border-foreground bg-foreground text-background shadow-premium"
+                        : "border-border/50 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                     }`}
                   >
                     TODOS
                   </button>
                   <button
                     onClick={() => setFilter("ropa")}
-                    className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
+                    className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
                       filter === "ropa"
-                        ? "border-foreground bg-foreground text-background"
-                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                        ? "border-foreground bg-foreground text-background shadow-premium"
+                        : "border-border/50 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                     }`}
                   >
                     ROPA
                   </button>
                   <button
                     onClick={() => setFilter("calzado")}
-                    className={`text-[11px] tracking-[0.2em] px-4 py-2 border transition-all duration-300 ${
+                    className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
                       filter === "calzado"
-                        ? "border-foreground bg-foreground text-background"
-                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                        ? "border-foreground bg-foreground text-background shadow-premium"
+                        : "border-border/50 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                     }`}
                   >
                     CALZADO
                   </button>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
                     ORDENAR:
                   </span>
                   <select
                     value={sort}
                     onChange={(e) => setSort(e.target.value as SortType)}
-                    className="text-[11px] tracking-[0.2em] px-4 py-2 border border-border bg-background text-foreground focus:outline-none focus:border-foreground transition-colors"
+                    className="text-[11px] tracking-[0.2em] px-5 py-2.5 border border-border/50 bg-background text-foreground focus:outline-none focus:border-foreground transition-colors rounded-full"
                   >
                     <option value="default">Defecto</option>
                     <option value="price-asc">Precio: Menor a Mayor</option>
@@ -178,14 +201,20 @@ export default function ShopPage() {
 
       {/* Testimonials */}
       <ScrollReveal>
-        <section className="py-24 px-6 border-t border-border">
+        <section className="py-24 px-6 border-t border-border bg-gradient-to-b from-background to-card/30">
           <div className="max-w-4xl mx-auto">
-            <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6 text-center">
-              LO QUE DICEN
-            </p>
-            <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-center mb-16">
-              TESTIMONIOS
-            </h2>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+                <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                  LO QUE DICEN
+                </p>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+              </div>
+              <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl leading-none">
+                TESTIMONIOS
+              </h2>
+            </div>
             <TestimonialCarousel />
           </div>
         </section>
@@ -195,13 +224,26 @@ export default function ShopPage() {
       <ScrollReveal>
         <section className="py-24 px-6 border-t border-border">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-              NEWSLETTER
-            </p>
-            <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl leading-tight mb-6">
-              MANTENTE ACTUALIZADO
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                NEWSLETTER
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
+            <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl leading-tight mb-6">
+              MANTENTE
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                ACTUALIZADO
+              </span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-12 max-w-xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed mb-12 max-w-xl mx-auto text-sm md:text-base">
               Recibe actualizaciones exclusivas sobre nuevos lanzamientos,
               descuentos especiales y contenido exclusivo de NOIR URBANO.
             </p>
@@ -212,15 +254,35 @@ export default function ShopPage() {
 
       {/* Bottom CTA */}
       <ScrollReveal>
-        <section className="py-24 px-6 border-t border-border">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-              EDICION LIMITADA
-            </p>
+        <section className="py-24 px-6 border-t border-border bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[30%] left-[20%] w-72 h-72 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-[30%] right-[20%] w-56 h-56 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "3s" }}
+            />
+          </div>
+          <div className="max-w-3xl mx-auto text-center relative z-10">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                EDICION LIMITADA
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
             <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl leading-tight mb-6">
-              SOLO 100 UNIDADES POR PIEZA
+              SOLO 100 UNIDADES
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                POR PIEZA
+              </span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed text-sm md:text-base max-w-lg mx-auto">
               Cada prenda de nuestra primera entrega esta numerada y es
               irrepetible. Una vez agotada, no volvera a fabricarse.
             </p>

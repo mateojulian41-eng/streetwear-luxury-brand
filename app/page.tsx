@@ -551,7 +551,7 @@ export default function Home() {
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group">
                 <Image
-                  src="/images/product-hoodie.jpg"
+                  src="/images/stealth-tee.jpg"
                   alt="Lookbook 5"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"

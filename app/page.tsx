@@ -675,15 +675,35 @@ export default function Home() {
 
       {/* Newsletter Section */}
       <ScrollReveal>
-        <section className="py-28 md:py-44 px-6 border-t border-border">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6">
-              NEWSLETTER
-            </p>
+        <section className="py-28 md:py-44 px-6 border-t border-border bg-gradient-to-b from-background to-card/30 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-[20%] right-[10%] w-48 h-48 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "2s" }}
+            />
+          </div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                NEWSLETTER
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-6xl leading-tight mb-6">
-              UNETE AL MOVIMIENTO
+              UNETE AL
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                MOVIMIENTO
+              </span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-12 max-w-xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed mb-12 max-w-xl mx-auto text-sm md:text-base">
               Recibe acceso anticipado a nuevos drops, ofertas exclusivas y
               contenido detrás de cámaras. Sin spam, solo streetwear.
             </p>
@@ -694,7 +714,7 @@ export default function Home() {
 
       {/* Statement Section */}
       <ScrollReveal>
-        <section className="py-28 md:py-44 px-6 border-t border-border relative overflow-hidden">
+        <section className="py-28 md:py-44 px-6 border-t border-border bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
           {/* Background text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
             <p className="font-[family-name:var(--font-display)] text-[clamp(5rem,18vw,16rem)] leading-none text-border/20 select-none whitespace-nowrap">
@@ -702,14 +722,22 @@ export default function Home() {
             </p>
           </div>
           <div className="max-w-5xl mx-auto text-center relative z-10">
+            <div className="inline-flex items-center gap-3 mb-12">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                MANIFIESTO
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
             <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-12">
               "EL LUJO NO ES
               <br className="hidden md:block" />
               LO QUE LLEVAS,
               <br className="hidden md:block" />
               <span
+                className="block"
                 style={{
-                  WebkitTextStroke: "1px oklch(0.50 0 0)",
+                  WebkitTextStroke: "2px oklch(0.50 0 0)",
                   color: "transparent",
                 }}
               >
@@ -719,7 +747,7 @@ export default function Home() {
             <Button
               asChild
               size="lg"
-              className="h-14 px-10 text-[11px] tracking-[0.3em]"
+              className="h-14 px-10 text-[11px] tracking-[0.3em] shadow-premium hover:shadow-premium-lg transition-all duration-300 bg-foreground text-background hover:bg-foreground/90"
             >
               <Link href="/shop">
                 COMPRAR AHORA

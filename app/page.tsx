@@ -596,6 +596,22 @@ export default function Home() {
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
+                  src="/images/stealth-tee.jpg"
+                  alt="STEALTH TEE"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
+                    STEALTH TEE
+                  </p>
+                </div>
+              </div>
+              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
+                <Image
                   src="/images/tactical-shorts.png"
                   alt="TACTICAL SHORTS"
                   fill
@@ -623,22 +639,6 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-[10px] tracking-[0.25em] font-medium">
                     NIGHT RUNNER
-                  </p>
-                </div>
-              </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
-                <Image
-                  src="/images/stealth-tee.jpg"
-                  alt="STEALTH TEE"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  quality={85}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
-                    STEALTH TEE
                   </p>
                 </div>
               </div>

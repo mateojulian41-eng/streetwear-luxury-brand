@@ -79,6 +79,8 @@ export default function Home() {
               fill
               className="object-cover opacity-25"
               priority
+              quality={85}
+              sizes="100vw"
             />
           </div>
           {/* Multi-layer gradient for depth */}
@@ -447,6 +449,8 @@ export default function Home() {
                   alt="Lookbook 1"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group md:row-span-2">
@@ -455,6 +459,8 @@ export default function Home() {
                   alt="Lookbook 2"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group">
@@ -463,6 +469,8 @@ export default function Home() {
                   alt="Lookbook 3"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group">
@@ -471,6 +479,8 @@ export default function Home() {
                   alt="Lookbook 4"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group">
@@ -479,6 +489,8 @@ export default function Home() {
                   alt="Lookbook 5"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group">
@@ -487,6 +499,8 @@ export default function Home() {
                   alt="Lookbook 6"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
             </div>

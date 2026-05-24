@@ -95,6 +95,8 @@ export function ProductCard({
           className={`object-cover transition-all duration-700 ease-out ${
             isHovered ? "scale-110 brightness-120" : "scale-100 brightness-100"
           }`}
+          quality={85}
+          sizes="(max-width: 768px) 50vw, 33vw"
         />
 
         {/* Subtle gradient overlay on hover */}

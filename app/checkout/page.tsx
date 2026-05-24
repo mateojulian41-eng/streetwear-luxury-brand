@@ -41,7 +41,7 @@ export default function CheckoutPage() {
     try {
       const { startCheckoutSession } = await import("@/app/actions/stripe");
 
-      const checkoutUrl = await startCheckoutSession(
+      const epaycoFormData = await startCheckoutSession(
         items.map((item) => ({
           productId: item.product.id,
           size: item.size,
@@ -51,8 +51,29 @@ export default function CheckoutPage() {
         `${formData.firstName} ${formData.lastName}`,
       );
 
-      // Redirect to Wompi checkout
-      window.location.href = checkoutUrl;
+      // Log para debugging
+      console.log("ePayco form data:", epaycoFormData);
+
+      // Crear formulario POST dinámicamente
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "https://secure.payco.co/checkout.php";
+      form.target = "_blank";
+
+      // Agregar campos del formulario
+      Object.entries(epaycoFormData).forEach(([key, value]) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = String(value);
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      setIsProcessing(false);
     } catch (error) {
       console.error("Error creating checkout session:", error);
       setIsProcessing(false);

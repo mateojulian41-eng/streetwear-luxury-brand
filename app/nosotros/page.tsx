@@ -192,7 +192,7 @@ export default function AboutPage() {
               <p className="text-[10px] tracking-[0.2em] text-muted-foreground">
                 ¿Tienes preguntas?{" "}
                 <a
-                  href="mailto:info@noirurbano.com"
+                  href="mailto:noirurbano1@gmail.com"
                   className="text-foreground hover:underline underline-offset-4"
                 >
                   Contáctanos

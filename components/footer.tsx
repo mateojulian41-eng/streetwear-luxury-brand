@@ -114,10 +114,10 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-muted-foreground" />
                 <a
-                  href="mailto:info@noirurbano.com"
+                  href="mailto:noirurbano1@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
-                  info@noirurbano.com
+                  noirurbano1@gmail.com
                 </a>
               </div>
               <p className="text-muted-foreground">Cartagena, Colombia</p>

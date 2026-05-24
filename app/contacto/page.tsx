@@ -75,10 +75,10 @@ export default function ContactoPage() {
                         EMAIL
                       </p>
                       <a
-                        href="mailto:info@noirurbano.com"
+                        href="mailto:noirurbano1@gmail.com"
                         className="text-lg hover:text-foreground transition-colors"
                       >
-                        info@noirurbano.com
+                        noirurbano1@gmail.com
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         Respuesta en 24-48 horas

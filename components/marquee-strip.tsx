@@ -8,7 +8,8 @@ export function MarqueeStrip() {
     "100 UNIDADES",
   ];
 
-  const repeated = [...items, ...items];
+  // Repeat items multiple times for seamless infinite scroll
+  const repeated = [...items, ...items, ...items, ...items, ...items, ...items];
 
   return (
     <div className="border-y border-border/30 py-6 overflow-hidden bg-gradient-to-r from-card/30 via-background to-card/30 relative">

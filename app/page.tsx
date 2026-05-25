@@ -536,7 +536,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
-                  src="/images/tank-top.png"
+                  src="/images/tank-top.jpeg"
                   alt="TANK TOP"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -552,7 +552,7 @@ export default function Home() {
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group md:row-span-2 shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
-                  src="/images/linen-shirt.png"
+                  src="/images/linen-shirt.jpeg"
                   alt="LINEN SHIRT"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"

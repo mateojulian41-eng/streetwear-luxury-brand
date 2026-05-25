@@ -18,8 +18,8 @@ export const products: Product[] = [
     slug: "shadow-hoodie",
     name: "SHADOW HOODIE",
     category: "Oversize Collection",
-    price: 890000,
-    priceInCents: 89000000,
+    price: 285000,
+    priceInCents: 28500000,
     description:
       "Hoodie oversize de corte pesado con capucha estructurada. Confeccionado en algodón premium de 450gsm con acabado cepillado interior. Silueta droopy con hombros caídos y mangas extra largas. El negro absoluto que define nuestra identidad.",
     details: [
@@ -39,8 +39,8 @@ export const products: Product[] = [
     slug: "heavy-cargo",
     name: "HEAVY CARGO",
     category: "Premium Pants",
-    price: 720000,
-    priceInCents: 72000000,
+    price: 220000,
+    priceInCents: 22000000,
     description:
       "Pantalón cargo de corte wide leg en tela ripstop premium. Múltiples bolsillos utilitarios con cierres metálicos negros. Cintura ajustable con trabillas reforzadas. Diseño funcional que fusiona la estética militar con el lujo urbano.",
     details: [
@@ -60,8 +60,8 @@ export const products: Product[] = [
     slug: "urban-stompers",
     name: "URBAN STOMPERS",
     category: "High Impact Footwear",
-    price: 980000,
-    priceInCents: 98000000,
+    price: 350000,
+    priceInCents: 35000000,
     description:
       "Sneaker high-top con plataforma chunky de alto impacto. Upper en cuero premium con detalles en nylon balístico. Suela de goma vulcanizada con tracción extrema. El calzado que domina cualquier territorio urbano.",
     details: [
@@ -81,8 +81,8 @@ export const products: Product[] = [
     slug: "void-tee",
     name: "VOID TEE",
     category: "Oversize Collection",
-    price: 280000,
-    priceInCents: 28000000,
+    price: 120000,
+    priceInCents: 12000000,
     description:
       "Camiseta oversize de peso medio en algodón premium 240gsm. Corte boxy con hombros caídos y cuello reforzado. Minimalismo absoluto en negro puro. La base perfecta para cualquier outfit urbano.",
     details: [
@@ -102,8 +102,8 @@ export const products: Product[] = [
     slug: "tactical-shorts",
     name: "TACTICAL SHORTS",
     category: "Premium Pants",
-    price: 480000,
-    priceInCents: 48000000,
+    price: 180000,
+    priceInCents: 18000000,
     description:
       "Shorts cargo de corte oversize en tela ripstop premium. Bolsillos laterales amplios con cierres metalicos. Cintura ajustable con cordon negro. Funcionalidad militar con estetica de lujo.",
     details: [
@@ -123,8 +123,8 @@ export const products: Product[] = [
     slug: "phantom-jacket",
     name: "PHANTOM JACKET",
     category: "Oversize Collection",
-    price: 1180000,
-    priceInCents: 118000000,
+    price: 420000,
+    priceInCents: 42000000,
     description:
       "Chaqueta bomber oversize en nylon balístico premium. Forro polar de alta calidad para frío moderado. Múltiples bolsillos interiores y exteriores. La pieza statement que completa cualquier look.",
     details: [
@@ -144,8 +144,8 @@ export const products: Product[] = [
     slug: "night-runner",
     name: "NIGHT RUNNER",
     category: "High Impact Footwear",
-    price: 850000,
-    priceInCents: 85000000,
+    price: 320000,
+    priceInCents: 32000000,
     description:
       "Sneaker low-top con silueta chunky moderna. Upper en malla técnica con overlays de cuero sintético. Suela de goma con sistema de amortiguación. Comodidad extrema con estética agresiva.",
     details: [
@@ -165,8 +165,8 @@ export const products: Product[] = [
     slug: "stealth-tee",
     name: "STEALTH TEE",
     category: "Oversize Collection",
-    price: 320000,
-    priceInCents: 32000000,
+    price: 145000,
+    priceInCents: 14500000,
     description:
       "Camiseta oversize de peso pesado en algodón premium 280gsm. Corte boxy con hombros caídos y cuello reforzado. Minimalismo absoluto con detalles sutiles. La pieza esencial para cualquier outfit urbano.",
     details: [

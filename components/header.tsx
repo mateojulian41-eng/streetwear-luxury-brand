@@ -29,7 +29,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/30 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -48,7 +48,7 @@ export function Header() {
                   href={link.href}
                   className={`relative text-[11px] tracking-[0.35em] transition-all duration-300 group ${
                     pathname === link.href
-                      ? "text-foreground"
+                      ? "text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -74,12 +74,12 @@ export function Header() {
               {/* Cart Button */}
               <button
                 onClick={openCart}
-                className="relative p-3 hover:bg-card transition-all duration-300 group"
+                className="relative p-3 hover:bg-card transition-all duration-300 group rounded-full hover:shadow-premium"
                 aria-label="Abrir carrito"
               >
                 <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
                 {mounted && itemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-foreground text-background text-[10px] font-medium flex items-center justify-center rounded-full border-2 border-background">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-foreground text-background text-[10px] font-medium flex items-center justify-center rounded-full border-2 border-background shadow-premium">
                     {itemCount}
                   </span>
                 )}
@@ -88,7 +88,7 @@ export function Header() {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-3 hover:bg-card transition-all duration-300"
+                className="md:hidden p-3 hover:bg-card transition-all duration-300 rounded-full hover:shadow-premium"
                 aria-label={mobileMenuOpen ? "Cerrar menu" : "Abrir menu"}
               >
                 {mobileMenuOpen ? (
@@ -106,7 +106,7 @@ export function Header() {
               mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <nav className="pt-6 pb-4 border-t border-border/50 mt-4">
+            <nav className="pt-6 pb-4 border-t border-border/30 mt-4">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.href}
@@ -125,7 +125,7 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <div className="pt-6 pb-4 border-t border-border/50">
+            <div className="pt-6 pb-4 border-t border-border/30">
               <div className="flex items-center justify-center gap-6">
                 <SocialLinks />
               </div>

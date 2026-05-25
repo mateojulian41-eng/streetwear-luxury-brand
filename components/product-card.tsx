@@ -87,13 +87,13 @@ export function ProductCard({
       }}
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-card border border-border/50 shadow-lg">
+      <div className="relative aspect-[3/4] overflow-hidden bg-card border border-border/30 shadow-premium group-hover:shadow-premium-lg transition-all duration-500">
         <Image
           src={image}
           alt={name}
           fill
           className={`object-cover transition-all duration-700 ease-out ${
-            isHovered ? "scale-110 brightness-120" : "scale-100 brightness-100"
+            isHovered ? "scale-110" : "scale-100"
           }`}
           quality={85}
           sizes="(max-width: 768px) 50vw, 33vw"
@@ -101,7 +101,7 @@ export function ProductCard({
 
         {/* Subtle gradient overlay on hover */}
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent transition-opacity duration-500 ${
+          className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 ${
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -120,11 +120,11 @@ export function ProductCard({
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="text-[11px] tracking-[0.3em] text-foreground/90 uppercase">
+            <span className="text-[11px] tracking-[0.3em] text-white uppercase font-medium">
               Quick View
             </span>
-            <div className="w-12 h-12 rounded-full border border-foreground/40 flex items-center justify-center bg-background/60 backdrop-blur-md group-hover:bg-foreground group-hover:border-foreground transition-all duration-300 shadow-lg">
-              <ArrowRight className="w-4 h-4 text-foreground group-hover:text-background transition-colors" />
+            <div className="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center bg-background/60 backdrop-blur-md group-hover:bg-white group-hover:border-white transition-all duration-300 shadow-premium">
+              <ArrowRight className="w-4 h-4 text-white group-hover:text-black transition-colors" />
             </div>
           </div>
         </div>

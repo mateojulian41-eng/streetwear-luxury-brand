@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad | NOIR URBANO",
-  description: "Política de privacidad de NOIR URBANO. Cómo protegemos tu información personal.",
+  description:
+    "Política de privacidad de NOIR URBANO. Cómo protegemos tu información personal.",
 };
 
 export default function PrivacyPage() {
@@ -77,15 +78,9 @@ export default function PrivacyPage() {
                 Implementamos medidas de seguridad para proteger tu información:
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
-                <li>
-                  Cifrado SSL para todas las transacciones en línea
-                </li>
-                <li>
-                  Procesamiento de pagos a través de pasarelas seguras
-                </li>
-                <li>
-                  Acceso restringido a la información personal
-                </li>
+                <li>Cifrado SSL para todas las transacciones en línea</li>
+                <li>Procesamiento de pagos a través de pasarelas seguras</li>
+                <li>Acceso restringido a la información personal</li>
                 <li>
                   Actualizaciones regulares de nuestros sistemas de seguridad
                 </li>
@@ -104,9 +99,7 @@ export default function PrivacyPage() {
                 <li>
                   Servicios de envío para entregar tu pedido (Servientrega)
                 </li>
-                <li>
-                  Procesadores de pagos para procesar transacciones
-                </li>
+                <li>Procesadores de pagos para procesar transacciones</li>
                 <li>
                   Autoridades gubernamentales cuando sea requerido por ley
                 </li>
@@ -121,15 +114,9 @@ export default function PrivacyPage() {
                 Utilizamos cookies para mejorar tu experiencia:
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
-                <li>
-                  Cookies esenciales para el funcionamiento del sitio
-                </li>
-                <li>
-                  Cookies de análisis para entender el uso del sitio
-                </li>
-                <li>
-                  Cookies de marketing para personalizar contenido
-                </li>
+                <li>Cookies esenciales para el funcionamiento del sitio</li>
+                <li>Cookies de análisis para entender el uso del sitio</li>
+                <li>Cookies de marketing para personalizar contenido</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Puedes configurar tu navegador para rechazar cookies, pero esto
@@ -145,21 +132,11 @@ export default function PrivacyPage() {
                 Tienes derecho a:
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
-                <li>
-                  Acceder a tu información personal
-                </li>
-                <li>
-                  Corregir información incorrecta
-                </li>
-                <li>
-                  Eliminar tu información personal
-                </li>
-                <li>
-                  Oponerte al procesamiento de tus datos
-                </li>
-                <li>
-                  Retirar tu consentimiento en cualquier momento
-                </li>
+                <li>Acceder a tu información personal</li>
+                <li>Corregir información incorrecta</li>
+                <li>Eliminar tu información personal</li>
+                <li>Oponerte al procesamiento de tus datos</li>
+                <li>Retirar tu consentimiento en cualquier momento</li>
               </ul>
               <p className="text-muted-foreground leading-relaxed mt-4">
                 Para ejercer estos derechos, contáctanos a hola@noirurbano.com
@@ -172,8 +149,8 @@ export default function PrivacyPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Conservamos tu información personal solo mientras sea necesario
-                para los fines descritos en esta política. Los datos de pedidos se
-                conservan por 5 años para cumplir con obligaciones legales y
+                para los fines descritos en esta política. Los datos de pedidos
+                se conservan por 5 años para cumplir con obligaciones legales y
                 contables.
               </p>
             </div>
@@ -195,8 +172,8 @@ export default function PrivacyPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 Para cualquier pregunta sobre nuestra política de privacidad o
-                para ejercer tus derechos, contáctanos a través de WhatsApp:
-                +57 313 585 9810 o email: hola@noirurbano.com
+                para ejercer tus derechos, contáctanos a través de WhatsApp: +57
+                313 585 9810 o email: noirurbano1@gmail.com
               </p>
             </div>
           </div>

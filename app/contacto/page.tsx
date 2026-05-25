@@ -215,7 +215,7 @@ export default function ContactoPage() {
                 <p className="text-muted-foreground leading-relaxed pl-12">
                   Los envíos dentro de Colombia tardan entre 3-5 días hábiles.
                   Enviamos por Servientrega con número de seguimiento. Envío
-                  gratis en compras superiores a $1,600,000 COP.
+                  gratis en compras superiores a $450,000 COP.
                 </p>
               </div>
 
@@ -257,7 +257,7 @@ export default function ContactoPage() {
             </div>
 
             {/* CTA */}
-            <div className="mt-16 pt-8 border-t border-border/50 text-center">
+            <div className="mt-16 pt-8 border-t border-border/30 text-center">
               <p className="text-muted-foreground mb-4">
                 ¿Tienes más preguntas?
               </p>

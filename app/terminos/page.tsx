@@ -76,7 +76,8 @@ export default function TermsPage() {
                 3. PRECIOS Y PAGOS
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Todos los precios están en USD e incluyen impuestos colombianos.
+                Todos los precios están en pesos colombianos (COP) e incluyen
+                impuestos.
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
                 <li>
@@ -100,8 +101,8 @@ export default function TermsPage() {
               </p>
               <ul className="space-y-2 text-muted-foreground leading-relaxed list-disc list-inside">
                 <li>Tiempo de entrega: 3-5 días hábiles</li>
-                <li>Envío gratis en compras superiores a $1,600,000 COP</li>
-                <li>Costo de envío estándar: $60,000 COP</li>
+                <li>Envío gratis en compras superiores a $450,000 COP</li>
+                <li>Costo de envío estándar: $25,000 COP</li>
                 <li>
                   El cliente es responsable de proporcionar una dirección de
                   entrega correcta
@@ -162,7 +163,7 @@ export default function TermsPage() {
               <p className="text-muted-foreground leading-relaxed">
                 Para cualquier pregunta sobre estos términos y condiciones,
                 puedes contactarnos a través de WhatsApp: +57 313 585 9810 o
-                email: hola@noirurbano.com
+                email: noirurbano1@gmail.com
               </p>
             </div>
           </div>

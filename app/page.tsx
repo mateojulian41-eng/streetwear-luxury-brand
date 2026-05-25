@@ -250,7 +250,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto">
-                Producción limitada de 100 unidades por pieza
+                Producción limitada de 50 unidades por pieza
               </p>
             </div>
 
@@ -446,7 +446,7 @@ export default function Home() {
               <div className="flex gap-6 md:gap-8 pb-2">
                 <div className="text-center group">
                   <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
-                    07
+                    06
                   </p>
                   <p className="text-[9px] tracking-[0.2em] text-muted-foreground mt-1 group-hover:text-foreground/80 transition-colors">
                     PIEZAS
@@ -455,7 +455,7 @@ export default function Home() {
                 <div className="h-12 w-px bg-border/50 self-center" />
                 <div className="text-center group">
                   <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
-                    100
+                    296
                   </p>
                   <p className="text-[9px] tracking-[0.2em] text-muted-foreground mt-1 group-hover:text-foreground/80 transition-colors">
                     UNIDADES
@@ -584,22 +584,6 @@ export default function Home() {
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
-                  src="/images/product-shoes.jpg"
-                  alt="URBAN STOMPERS"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  quality={85}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
-                    URBAN STOMPERS
-                  </p>
-                </div>
-              </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
-                <Image
                   src="/images/void-tee.png"
                   alt="VOID TEE"
                   fill
@@ -643,22 +627,6 @@ export default function Home() {
                 <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-[10px] tracking-[0.25em] font-medium">
                     TACTICAL SHORTS
-                  </p>
-                </div>
-              </div>
-              <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
-                <Image
-                  src="/images/night-runner.png"
-                  alt="NIGHT RUNNER"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  quality={85}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-white text-[10px] tracking-[0.25em] font-medium">
-                    NIGHT RUNNER
                   </p>
                 </div>
               </div>

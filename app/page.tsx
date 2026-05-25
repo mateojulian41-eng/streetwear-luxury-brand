@@ -455,7 +455,7 @@ export default function Home() {
                 <div className="h-12 w-px bg-border/50 self-center" />
                 <div className="text-center group">
                   <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
-                    296
+                    328
                   </p>
                   <p className="text-[9px] tracking-[0.2em] text-muted-foreground mt-1 group-hover:text-foreground/80 transition-colors">
                     UNIDADES
@@ -536,8 +536,8 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="aspect-[3/4] bg-card overflow-hidden relative group shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
-                  src="/images/product-hoodie.jpg"
-                  alt="SHADOW HOODIE"
+                  src="/images/tank-top.png"
+                  alt="TANK TOP"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
@@ -546,14 +546,14 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-[10px] tracking-[0.25em] font-medium">
-                    SHADOW HOODIE
+                    TANK TOP
                   </p>
                 </div>
               </div>
               <div className="aspect-[3/4] bg-card overflow-hidden relative group md:row-span-2 shadow-premium hover:shadow-premium-lg transition-all duration-500">
                 <Image
-                  src="/images/phantom-jacket.png"
-                  alt="PHANTOM JACKET"
+                  src="/images/linen-shirt.png"
+                  alt="LINEN SHIRT"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   quality={85}
@@ -562,7 +562,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="text-white text-[10px] tracking-[0.25em] font-medium">
-                    PHANTOM JACKET
+                    LINEN SHIRT
                   </p>
                 </div>
               </div>

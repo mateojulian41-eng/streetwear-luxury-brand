@@ -18,8 +18,15 @@ export function Footer() {
     }
   };
   return (
-    <footer className="border-t border-border/50 py-20 px-6 bg-card/30">
-      <div className="max-w-7xl mx-auto">
+    <footer className="border-t border-border/30 py-20 px-6 bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute bottom-[20%] right-[10%] w-48 h-48 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-4 gap-16 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
@@ -36,22 +43,22 @@ export function Footer() {
 
             {/* Newsletter */}
             <div className="mt-8">
-              <h4 className="text-[10px] tracking-[0.35em] text-muted-foreground mb-4">
+              <h4 className="text-[10px] tracking-[0.35em] text-foreground/80 font-medium mb-4">
                 NEWSLETTER
               </h4>
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-3">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Tu email"
-                  className="flex-1 bg-background/50 border border-border/50 px-4 py-3 text-sm focus:border-foreground/50 focus:outline-none transition-all duration-300"
+                  className="flex-1 bg-background/50 border border-border/30 px-4 py-3 text-sm focus:border-foreground/40 focus:outline-none transition-all duration-300 rounded-full shadow-sm"
                   disabled={isSubscribed}
                 />
                 <button
                   type="submit"
                   disabled={isSubscribed || !email}
-                  className="px-4 py-3 bg-foreground text-background text-[10px] tracking-[0.2em] hover:bg-foreground/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                  className="px-6 py-3 bg-foreground text-background text-[10px] tracking-[0.2em] hover:bg-foreground/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 rounded-full shadow-premium hover:shadow-premium-lg"
                 >
                   {isSubscribed ? "¡Suscrito!" : "UNIRSE"}
                 </button>
@@ -70,7 +77,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-[10px] tracking-[0.35em] text-muted-foreground mb-8">
+            <h4 className="text-[10px] tracking-[0.35em] text-foreground/80 font-medium mb-8">
               NAVEGACIÓN
             </h4>
             <nav className="flex flex-col gap-4">
@@ -107,7 +114,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[10px] tracking-[0.35em] text-muted-foreground mb-8">
+            <h4 className="text-[10px] tracking-[0.35em] text-foreground/80 font-medium mb-8">
               CONTACTO
             </h4>
             <div className="flex flex-col gap-4 text-sm">
@@ -134,7 +141,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-[10px] text-muted-foreground tracking-[0.2em]">
             &copy; 2026 NOIR URBANO. TODOS LOS DERECHOS RESERVADOS.
           </p>

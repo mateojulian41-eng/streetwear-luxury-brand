@@ -75,7 +75,7 @@ export default function Home() {
           >
             <Image
               src="/images/hero-model.jpg"
-              alt="NOIR URBANO - Streetwear Luxury"
+              alt="NOIR URBANO - Streetwear Premium"
               fill
               className="object-cover opacity-25 scale-110"
               priority
@@ -165,7 +165,7 @@ export default function Home() {
           >
             <div className="h-px flex-1 max-w-32 bg-gradient-to-r from-transparent via-foreground/60 to-transparent" />
             <p className="text-[10px] tracking-[0.4em] text-foreground/90 font-medium">
-              STREETWEAR LUXURY
+              STREETWEAR PREMIUM
             </p>
             <div className="h-px flex-1 max-w-32 bg-gradient-to-l from-transparent via-foreground/60 to-transparent" />
           </div>
@@ -176,7 +176,7 @@ export default function Home() {
           >
             La crudeza de la calle.
             <br />
-            La elegancia del negro absoluto.
+            La calidad del negro absoluto.
           </p>
 
           <div
@@ -233,7 +233,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
                 <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
-                  PROXIMO DROP
+                  LANZAMIENTO OFICIAL
                 </p>
                 <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
               </div>
@@ -246,11 +246,11 @@ export default function Home() {
                     color: "transparent",
                   }}
                 >
-                  V2
+                  INAUGURAL
                 </span>
               </h2>
               <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto">
-                Edicion limitada de 100 unidades por pieza
+                Producción limitada de 100 unidades por pieza
               </p>
             </div>
 
@@ -361,7 +361,7 @@ export default function Home() {
               <div className="space-y-8 text-muted-foreground leading-relaxed text-sm md:text-base relative">
                 <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/20 to-transparent hidden md:block" />
                 <p className="relative z-10 pl-8">
-                  Somos una marca nativa de streetwear luxury nacida en
+                  Somos una marca nativa de streetwear premium nacida en
                   Cartagena, creada por y para jóvenes que viven el flow urbano
                   a través de una estética dark y rebelde.
                 </p>

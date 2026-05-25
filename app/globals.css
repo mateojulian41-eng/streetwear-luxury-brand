@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Dark luxury streetwear theme - premium black aesthetic */
+/* Dark premium streetwear theme - premium black aesthetic */
 :root {
   /* Backgrounds - Enhanced depth and contrast */
   --background: oklch(0.1 0 0);

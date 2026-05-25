@@ -1,6 +1,6 @@
 export function MarqueeStrip() {
   const items = [
-    "STREETWEAR LUXURY",
+    "STREETWEAR PREMIUM",
     "HECHO EN COLOMBIA",
     "CARTAGENA SS26",
     "EDICIÓN LIMITADA",

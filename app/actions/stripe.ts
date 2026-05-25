@@ -49,7 +49,7 @@ export async function startCheckoutSession(
     p_cust_id_cliente: p_cust_id_cliente,
     p_key: p_key,
     p_id_invoice: reference,
-    p_description: "Compra NOIR - Streetwear Luxury Brand",
+    p_description: "Compra NOIR - Streetwear Premium Brand",
     p_currency_code: currency_code,
     p_amount: amount,
     p_tax: 0,

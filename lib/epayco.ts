@@ -83,7 +83,7 @@ export async function createEpaycoCheckoutSession(
         },
         body: JSON.stringify({
           checkout_version: "2",
-          name: "NOIR - Streetwear Luxury Brand",
+          name: "NOIR - Streetwear Premium Brand",
           currency: currency,
           amount: amountInCents / 100, // Convert to pesos
           description: `Compra NOIR - Ref: ${reference}`,

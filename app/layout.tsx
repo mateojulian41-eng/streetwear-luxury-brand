@@ -9,14 +9,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "NOIR URBANO | Streetwear Luxury de Cartagena",
+    default: "NOIR URBANO | Streetwear Premium de Cartagena",
     template: "%s | NOIR URBANO",
   },
   description:
-    "Piezas exclusivas de streetwear luxury diseñadas en Cartagena, Colombia. Ediciones limitadas de 100 unidades. Negro absoluto, autenticidad pura.",
+    "Piezas exclusivas de streetwear premium diseñadas en Cartagena, Colombia. Producción limitada de 100 unidades. Negro absoluto, autenticidad pura.",
   keywords: [
     "streetwear",
-    "luxury",
+    "premium",
     "colombia",
     "cartagena",
     "moda",
@@ -49,23 +49,23 @@ export const metadata: Metadata = {
     locale: "es_CO",
     url: "https://noirurbano.co",
     siteName: "NOIR URBANO",
-    title: "NOIR URBANO | Streetwear Luxury",
+    title: "NOIR URBANO | Streetwear Premium",
     description:
-      "Piezas exclusivas de streetwear luxury diseñadas en Cartagena, Colombia.",
+      "Piezas exclusivas de streetwear premium diseñadas en Cartagena, Colombia.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "NOIR URBANO - Streetwear Luxury",
+        alt: "NOIR URBANO - Streetwear Premium",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NOIR URBANO | Streetwear Luxury",
+    title: "NOIR URBANO | Streetwear Premium",
     description:
-      "Piezas exclusivas de streetwear luxury diseñadas en Cartagena, Colombia.",
+      "Piezas exclusivas de streetwear premium diseñadas en Cartagena, Colombia.",
     images: ["/og-image.jpg"],
   },
   robots: {

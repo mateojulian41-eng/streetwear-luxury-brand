@@ -37,8 +37,8 @@ export function Footer() {
               NOIR URBANO
             </Link>
             <p className="text-sm text-muted-foreground mt-6 max-w-sm leading-relaxed">
-              Streetwear luxury nacido en Cartagena. La crudeza de la calle, la
-              elegancia del negro absoluto.
+              Streetwear premium nacido en Cartagena. La crudeza de la calle, la
+              calidad del negro absoluto.
             </p>
 
             {/* Newsletter */}

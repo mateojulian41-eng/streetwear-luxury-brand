@@ -24,8 +24,8 @@ export default function AboutPage() {
             </h1>
             <p className="text-muted-foreground max-w-2xl leading-relaxed text-lg">
               Nacida en Cartagena, NOIR URBANO es una marca nativa de streetwear
-              luxury que fusiona la crudeza de la cultura callejera con la
-              elegancia del negro absoluto.
+              premium que fusiona la crudeza de la cultura callejera con la
+              calidad del negro absoluto.
             </p>
             <div className="flex items-center gap-3 mt-8">
               <MapPin className="w-4 h-4 text-muted-foreground" />

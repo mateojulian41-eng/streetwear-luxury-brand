@@ -77,42 +77,55 @@ export default function Home() {
               src="/images/hero-model.jpg"
               alt="NOIR URBANO - Streetwear Luxury"
               fill
-              className="object-cover opacity-30 scale-105"
+              className="object-cover opacity-25 scale-110"
               priority
               quality={85}
               sizes="100vw"
             />
           </div>
           {/* Enhanced multi-layer gradient for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background/95" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/50 to-background/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/70 to-background/98" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/98 via-background/60 to-background/98" />
           {/* Enhanced glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-foreground/10 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-bl from-foreground/5 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-foreground/15 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-foreground/10 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/5 via-transparent to-transparent" />
         </div>
 
         {/* Enhanced decorative elements */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute left-[5%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/30 to-transparent animate-pulse" />
-          <div className="absolute right-[5%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/30 to-transparent animate-pulse" />
-          <div className="absolute top-[10%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
-          <div className="absolute bottom-[10%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
+          <div className="absolute left-[5%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/40 to-transparent animate-pulse" />
+          <div
+            className="absolute right-[5%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/40 to-transparent animate-pulse"
+            style={{ animationDelay: "1s" }}
+          />
+          <div className="absolute top-[10%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
+          <div className="absolute bottom-[10%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
           {/* Enhanced floating orbs with different animations */}
           <div
-            className="absolute top-[15%] left-[15%] w-72 h-72 bg-foreground/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDuration: "6s", animationDelay: "0s" }}
+            className="absolute top-[15%] left-[15%] w-72 h-72 bg-foreground/15 rounded-full blur-3xl animate-pulse"
+            style={{ animationDuration: "8s", animationDelay: "0s" }}
           />
           <div
-            className="absolute top-[25%] right-[20%] w-48 h-48 bg-foreground/5 rounded-full blur-3xl animate-pulse"
-            style={{ animationDuration: "8s", animationDelay: "2s" }}
+            className="absolute top-[25%] right-[20%] w-48 h-48 bg-foreground/10 rounded-full blur-3xl animate-pulse"
+            style={{ animationDuration: "10s", animationDelay: "2s" }}
           />
           <div
-            className="absolute bottom-[25%] left-[25%] w-64 h-64 bg-foreground/8 rounded-full blur-3xl animate-pulse"
-            style={{ animationDuration: "10s", animationDelay: "4s" }}
+            className="absolute bottom-[25%] left-[25%] w-64 h-64 bg-foreground/12 rounded-full blur-3xl animate-pulse"
+            style={{ animationDuration: "12s", animationDelay: "4s" }}
           />
           <div
-            className="absolute bottom-[35%] right-[10%] w-80 h-80 bg-foreground/6 rounded-full blur-3xl animate-pulse"
-            style={{ animationDuration: "12s", animationDelay: "1s" }}
+            className="absolute bottom-[35%] right-[10%] w-80 h-80 bg-foreground/8 rounded-full blur-3xl animate-pulse"
+            style={{ animationDuration: "14s", animationDelay: "1s" }}
+          />
+          {/* Additional subtle orbs */}
+          <div
+            className="absolute top-[40%] left-[40%] w-32 h-32 bg-foreground/5 rounded-full blur-2xl animate-pulse"
+            style={{ animationDuration: "9s", animationDelay: "3s" }}
+          />
+          <div
+            className="absolute top-[60%] right-[30%] w-40 h-40 bg-foreground/6 rounded-full blur-2xl animate-pulse"
+            style={{ animationDuration: "11s", animationDelay: "5s" }}
           />
         </div>
 
@@ -193,12 +206,12 @@ export default function Home() {
         {/* Enhanced Scroll Indicator */}
         <div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-up opacity-0"
-          style={{ animationDelay: "1.4s", animationFillMode: "forwards" }}
+          style={{ animationDelay: "1.6s", animationFillMode: "forwards" }}
         >
-          <span className="text-[9px] tracking-[0.4em] text-muted-foreground/60">
+          <span className="text-[9px] tracking-[0.4em] text-foreground/60">
             SCROLL
           </span>
-          <div className="w-px h-20 bg-gradient-to-b from-foreground/40 to-transparent animate-pulse" />
+          <div className="w-px h-24 bg-gradient-to-b from-foreground/50 to-transparent animate-pulse" />
         </div>
       </section>
 
@@ -207,8 +220,15 @@ export default function Home() {
 
       {/* Countdown Section */}
       <ScrollReveal>
-        <section className="py-24 md:py-32 px-6 border-t border-border bg-gradient-to-b from-background to-card/50">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-28 md:py-36 px-6 border-t border-border/30 bg-gradient-to-b from-background to-card/50 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-[20%] right-[10%] w-48 h-48 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "2s" }}
+            />
+          </div>
+          <div className="max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
@@ -237,9 +257,9 @@ export default function Home() {
             {/* Enhanced Countdown Timer */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto mb-16">
               <div className="text-center group">
-                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/5 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/40 group-hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-2 left-2 w-2 h-2 bg-foreground/30 rounded-full animate-pulse" />
+                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/8 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/50 group-hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-2 left-2 w-2 h-2 bg-foreground/40 rounded-full animate-pulse" />
                   <span className="font-[family-name:var(--font-display)] text-5xl md:text-7xl relative z-10 group-hover:scale-110 transition-transform duration-300">
                     {String(timeLeft.days).padStart(2, "0")}
                   </span>
@@ -249,10 +269,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="text-center group">
-                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/5 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/40 group-hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/8 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/50 group-hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div
-                    className="absolute top-2 left-2 w-2 h-2 bg-foreground/30 rounded-full animate-pulse"
+                    className="absolute top-2 left-2 w-2 h-2 bg-foreground/40 rounded-full animate-pulse"
                     style={{ animationDelay: "0.5s" }}
                   />
                   <span className="font-[family-name:var(--font-display)] text-5xl md:text-7xl relative z-10 group-hover:scale-110 transition-transform duration-300">
@@ -264,10 +284,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="text-center group">
-                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/5 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/40 group-hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/8 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/50 group-hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div
-                    className="absolute top-2 left-2 w-2 h-2 bg-foreground/30 rounded-full animate-pulse"
+                    className="absolute top-2 left-2 w-2 h-2 bg-foreground/40 rounded-full animate-pulse"
                     style={{ animationDelay: "1s" }}
                   />
                   <span className="font-[family-name:var(--font-display)] text-5xl md:text-7xl relative z-10 group-hover:scale-110 transition-transform duration-300">
@@ -279,10 +299,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="text-center group">
-                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/5 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/40 group-hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="aspect-square border border-border/30 flex items-center justify-center mb-4 bg-gradient-to-br from-foreground/8 to-transparent backdrop-blur-sm relative overflow-hidden shadow-premium transition-all duration-500 group-hover:shadow-premium-lg group-hover:border-foreground/50 group-hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div
-                    className="absolute top-2 left-2 w-2 h-2 bg-foreground/30 rounded-full animate-pulse"
+                    className="absolute top-2 left-2 w-2 h-2 bg-foreground/40 rounded-full animate-pulse"
                     style={{ animationDelay: "1.5s" }}
                   />
                   <span className="font-[family-name:var(--font-display)] text-5xl md:text-7xl relative z-10 group-hover:scale-110 transition-transform duration-300">

@@ -325,7 +325,7 @@ export default function Home() {
                 <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl lg:text-8xl leading-none mb-0 relative z-10">
                   NACIDOS
                   <br />
-                  EN LA
+                  DEL
                   <br />
                   <span
                     className="block"
@@ -334,7 +334,7 @@ export default function Home() {
                       color: "transparent",
                     }}
                   >
-                    OSCURIDAD
+                    CAOS URBANO
                   </span>
                 </h2>
               </div>
@@ -342,18 +342,18 @@ export default function Home() {
                 <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/20 to-transparent hidden md:block" />
                 <p className="relative z-10 pl-8">
                   Somos una marca nativa de streetwear luxury nacida en
-                  Cartagena, creada por y para jovenes que viven el flow urbano
-                  a traves de una estetica dark y rebelde.
+                  Cartagena, creada por y para jóvenes que viven el flow urbano
+                  a través de una estética dark y rebelde.
                 </p>
                 <p className="relative z-10 pl-8">
                   Fusionamos la crudeza de la cultura callejera, el arte del
                   grafiti americano y la elegancia del negro absoluto en una
-                  linea exclusiva de prendas premium.
+                  línea exclusiva de prendas premium.
                 </p>
                 <p className="relative z-10 pl-8">
-                  Nuestro proposito es vestir a una generacion transgresora pero
+                  Nuestro propósito es vestir a una generación transgresora pero
                   sofisticada, ofreciendo prendas con una identidad oscura y un
-                  caracter premium que desafia lo convencional.
+                  carácter premium que desafía lo convencional.
                 </p>
 
                 {/* Enhanced Stats inline */}

@@ -1,3 +1,19 @@
+export interface FabricSpecs {
+  material: string;
+  gsm: number;
+  type: string;
+  finish: string;
+  durability: string;
+  breathability: string;
+  care: string[];
+}
+
+export interface StockLevel {
+  size: string;
+  quantity: number;
+  reorderPoint: number;
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -7,9 +23,13 @@ export interface Product {
   priceInCents: number;
   description: string;
   details: string[];
+  fabricSpecs: FabricSpecs;
   sizes: string[];
+  stockLevels: StockLevel[];
   images: string[];
   inStock: boolean;
+  productionCost: number;
+  productionCostInCents: number;
 }
 
 export const products: Product[] = [
@@ -30,9 +50,32 @@ export const products: Product[] = [
       "Etiqueta bordada NOIR URBANO",
       "Hecho en Colombia",
     ],
+    fabricSpecs: {
+      material: "100% Algodón Premium",
+      gsm: 450,
+      type: "French Terry",
+      finish: "Brushed interior (cepillado interior)",
+      durability: "100+ lavados sin deformación",
+      breathability: "Media (ideal para AC/noches)",
+      care: [
+        "Lavar a 30°C",
+        "No usar blanqueador",
+        "Secar en sombra",
+        "Planchar a baja temperatura",
+      ],
+    },
     sizes: ["S", "M", "L", "XL", "XXL"],
+    stockLevels: [
+      { size: "S", quantity: 10, reorderPoint: 3 },
+      { size: "M", quantity: 10, reorderPoint: 3 },
+      { size: "L", quantity: 10, reorderPoint: 3 },
+      { size: "XL", quantity: 10, reorderPoint: 3 },
+      { size: "XXL", quantity: 10, reorderPoint: 3 },
+    ],
     images: ["/images/product-hoodie.jpg"],
     inStock: true,
+    productionCost: 114000,
+    productionCostInCents: 11400000,
   },
   {
     id: "heavy-cargo",
@@ -51,9 +94,33 @@ export const products: Product[] = [
       "Cintura elástica con cordón",
       "Hecho en Colombia",
     ],
+    fabricSpecs: {
+      material: "Ripstop Premium (algodón + nylon)",
+      gsm: 280,
+      type: "Ripstop",
+      finish: "Water-repellent (repelente al agua)",
+      durability: "Extrema (uso intensivo)",
+      breathability: "Media",
+      care: [
+        "Lavar a 30°C",
+        "No usar blanqueador",
+        "Secar en sombra",
+        "No planchar a alta temperatura",
+      ],
+    },
     sizes: ["28", "30", "32", "34", "36", "38"],
+    stockLevels: [
+      { size: "28", quantity: 8, reorderPoint: 2 },
+      { size: "30", quantity: 8, reorderPoint: 2 },
+      { size: "32", quantity: 8, reorderPoint: 2 },
+      { size: "34", quantity: 8, reorderPoint: 2 },
+      { size: "36", quantity: 8, reorderPoint: 2 },
+      { size: "38", quantity: 8, reorderPoint: 2 },
+    ],
     images: ["/images/product-pants.jpg"],
     inStock: true,
+    productionCost: 88000,
+    productionCostInCents: 8800000,
   },
   {
     id: "void-tee",
@@ -72,9 +139,32 @@ export const products: Product[] = [
       "Peso medio ideal para cualquier clima",
       "Hecho en Colombia",
     ],
+    fabricSpecs: {
+      material: "100% Algodón Premium",
+      gsm: 240,
+      type: "Single Jersey",
+      finish: "Pre-shrunk (encogimiento controlado)",
+      durability: "50+ lavados sin deformación",
+      breathability: "Alta (ideal para clima de Cartagena)",
+      care: [
+        "Lavar a 30°C",
+        "No usar blanqueador",
+        "Secar en sombra",
+        "Planchar a baja temperatura",
+      ],
+    },
     sizes: ["S", "M", "L", "XL", "XXL"],
+    stockLevels: [
+      { size: "S", quantity: 10, reorderPoint: 3 },
+      { size: "M", quantity: 10, reorderPoint: 3 },
+      { size: "L", quantity: 10, reorderPoint: 3 },
+      { size: "XL", quantity: 10, reorderPoint: 3 },
+      { size: "XXL", quantity: 10, reorderPoint: 3 },
+    ],
     images: ["/images/void-tee.png"],
     inStock: true,
+    productionCost: 48000,
+    productionCostInCents: 4800000,
   },
   {
     id: "tactical-shorts",
@@ -93,9 +183,33 @@ export const products: Product[] = [
       "Cintura elastica con cordon",
       "Hecho en Colombia",
     ],
+    fabricSpecs: {
+      material: "Ripstop Premium (algodón + nylon)",
+      gsm: 260,
+      type: "Ripstop",
+      finish: "Water-repellent (repelente al agua)",
+      durability: "Alta",
+      breathability: "Media-alta",
+      care: [
+        "Lavar a 30°C",
+        "No usar blanqueador",
+        "Secar en sombra",
+        "No planchar a alta temperatura",
+      ],
+    },
     sizes: ["28", "30", "32", "34", "36", "38"],
+    stockLevels: [
+      { size: "28", quantity: 8, reorderPoint: 2 },
+      { size: "30", quantity: 8, reorderPoint: 2 },
+      { size: "32", quantity: 8, reorderPoint: 2 },
+      { size: "34", quantity: 8, reorderPoint: 2 },
+      { size: "36", quantity: 8, reorderPoint: 2 },
+      { size: "38", quantity: 8, reorderPoint: 2 },
+    ],
     images: ["/images/tactical-shorts.png"],
     inStock: true,
+    productionCost: 72000,
+    productionCostInCents: 7200000,
   },
   {
     id: "phantom-jacket",
@@ -114,9 +228,32 @@ export const products: Product[] = [
       "Bolsillos interiores secretos",
       "Hecho en Colombia",
     ],
+    fabricSpecs: {
+      material: "Nylon Balístico",
+      gsm: 300,
+      type: "Nylon Balístico",
+      finish: "DWR (Durable Water Repellent)",
+      durability: "Extrema",
+      breathability: "Media",
+      care: [
+        "Lavar a 30°C",
+        "No usar blanqueador",
+        "Secar en sombra",
+        "No planchar",
+      ],
+    },
     sizes: ["S", "M", "L", "XL", "XXL"],
+    stockLevels: [
+      { size: "S", quantity: 10, reorderPoint: 3 },
+      { size: "M", quantity: 10, reorderPoint: 3 },
+      { size: "L", quantity: 10, reorderPoint: 3 },
+      { size: "XL", quantity: 10, reorderPoint: 3 },
+      { size: "XXL", quantity: 10, reorderPoint: 3 },
+    ],
     images: ["/images/phantom-jacket.png"],
     inStock: true,
+    productionCost: 168000,
+    productionCostInCents: 16800000,
   },
   {
     id: "stealth-tee",
@@ -135,9 +272,32 @@ export const products: Product[] = [
       "Peso pesado para durabilidad",
       "Hecho en Colombia",
     ],
+    fabricSpecs: {
+      material: "100% Algodón Premium",
+      gsm: 280,
+      type: "Heavy Jersey",
+      finish: "Pre-shrunk + Enzyme wash",
+      durability: "100+ lavados sin deformación",
+      breathability: "Media-alta",
+      care: [
+        "Lavar a 30°C",
+        "No usar blanqueador",
+        "Secar en sombra",
+        "Planchar a baja temperatura",
+      ],
+    },
     sizes: ["S", "M", "L", "XL", "XXL"],
+    stockLevels: [
+      { size: "S", quantity: 10, reorderPoint: 3 },
+      { size: "M", quantity: 10, reorderPoint: 3 },
+      { size: "L", quantity: 10, reorderPoint: 3 },
+      { size: "XL", quantity: 10, reorderPoint: 3 },
+      { size: "XXL", quantity: 10, reorderPoint: 3 },
+    ],
     images: ["/images/stealth-tee.jpg"],
     inStock: true,
+    productionCost: 58000,
+    productionCostInCents: 5800000,
   },
 ];
 

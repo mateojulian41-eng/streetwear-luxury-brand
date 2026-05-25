@@ -357,7 +357,7 @@ export default function Home() {
                 </p>
 
                 {/* Enhanced Stats inline */}
-                <div className="flex items-center gap-8 md:gap-12 pt-8 border-t border-border/50 pl-8">
+                <div className="flex items-center gap-8 md:gap-12 pt-8 border-t border-border/30 pl-8">
                   <div className="text-center group">
                     <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
                       100%
@@ -366,7 +366,7 @@ export default function Home() {
                       COLOMBIANO
                     </p>
                   </div>
-                  <div className="h-12 w-px bg-border/50" />
+                  <div className="h-12 w-px bg-border/30" />
                   <div className="text-center group">
                     <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
                       450GSM
@@ -375,7 +375,7 @@ export default function Home() {
                       GRAMAJE PREMIUM
                     </p>
                   </div>
-                  <div className="h-12 w-px bg-border/50" />
+                  <div className="h-12 w-px bg-border/30" />
                   <div className="text-center group">
                     <p className="font-[family-name:var(--font-display)] text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
                       SS26

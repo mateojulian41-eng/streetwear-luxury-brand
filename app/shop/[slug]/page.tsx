@@ -104,7 +104,7 @@ export default function ProductPage({
                       className={`relative aspect-square bg-card overflow-hidden border-2 transition-all duration-300 ${
                         selectedImage === index
                           ? "border-foreground"
-                          : "border-transparent hover:border-border"
+                          : "border-transparent hover:border-border/30"
                       }`}
                     >
                       <Image
@@ -176,7 +176,7 @@ export default function ProductPage({
                             ? "border-foreground bg-foreground text-background shadow-premium"
                             : !product.inStock
                               ? "border-border/30 text-muted-foreground/30 cursor-not-allowed"
-                              : "border-border text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                              : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                         }`}
                       >
                         {size}
@@ -229,7 +229,7 @@ export default function ProductPage({
                 )}
 
                 {/* Details List */}
-                <div className="mt-12 pt-10 border-t border-border">
+                <div className="mt-12 pt-10 border-t border-border/30">
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-6">
                     DETALLES DEL PRODUCTO
                   </p>
@@ -250,14 +250,14 @@ export default function ProductPage({
 
                 {/* Tags */}
                 <div className="mt-10 flex flex-wrap gap-3">
-                  <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors">
+                  <span className="px-4 py-2 border border-border/30 text-[9px] tracking-[0.2em] text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors">
                     EDICIÓN LIMITADA
                   </span>
-                  <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors">
+                  <span className="px-4 py-2 border border-border/30 text-[9px] tracking-[0.2em] text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors">
                     HECHO EN COLOMBIA
                   </span>
                   {product.inStock && (
-                    <span className="px-4 py-2 border border-border text-[9px] tracking-[0.2em] text-foreground hover:border-foreground transition-colors">
+                    <span className="px-4 py-2 border border-border/30 text-[9px] tracking-[0.2em] text-foreground hover:border-foreground transition-colors">
                       EN STOCK
                     </span>
                   )}
@@ -293,7 +293,7 @@ export default function ProductPage({
                 </div>
 
                 {/* Shipping Info */}
-                <div className="mt-10 pt-10 border-t border-border">
+                <div className="mt-10 pt-10 border-t border-border/30">
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
                     ENVÍO
                   </p>
@@ -316,7 +316,7 @@ export default function ProductPage({
                 </div>
 
                 {/* Care Instructions */}
-                <div className="mt-10 pt-10 border-t border-border">
+                <div className="mt-10 pt-10 border-t border-border/30">
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
                     CUIDADO
                   </p>
@@ -350,7 +350,7 @@ export default function ProductPage({
       </ScrollReveal>
 
       {/* Sticky Add to Cart for Mobile */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border p-4 md:hidden z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-xl border-t border-border/30 p-4 md:hidden z-50">
         <Button
           size="lg"
           className="w-full h-14 text-[11px] tracking-[0.3em]"

@@ -119,7 +119,7 @@ export default function ShopPage() {
                     className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
                       filter === "all"
                         ? "border-foreground bg-foreground text-background shadow-premium"
-                        : "border-border/50 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                        : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                     }`}
                   >
                     TODOS
@@ -129,7 +129,7 @@ export default function ShopPage() {
                     className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
                       filter === "ropa"
                         ? "border-foreground bg-foreground text-background shadow-premium"
-                        : "border-border/50 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                        : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                     }`}
                   >
                     ROPA
@@ -139,7 +139,7 @@ export default function ShopPage() {
                     className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
                       filter === "calzado"
                         ? "border-foreground bg-foreground text-background shadow-premium"
-                        : "border-border/50 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                        : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
                     }`}
                   >
                     CALZADO
@@ -152,7 +152,7 @@ export default function ShopPage() {
                   <select
                     value={sort}
                     onChange={(e) => setSort(e.target.value as SortType)}
-                    className="text-[11px] tracking-[0.2em] px-5 py-2.5 border border-border/50 bg-background text-foreground focus:outline-none focus:border-foreground transition-colors rounded-full"
+                    className="text-[11px] tracking-[0.2em] px-5 py-2.5 border border-border/30 bg-background text-foreground focus:outline-none focus:border-foreground transition-colors rounded-full"
                   >
                     <option value="default">Defecto</option>
                     <option value="price-asc">Precio: Menor a Mayor</option>
@@ -201,7 +201,7 @@ export default function ShopPage() {
 
       {/* Testimonials */}
       <ScrollReveal>
-        <section className="py-24 px-6 border-t border-border bg-gradient-to-b from-background to-card/30">
+        <section className="py-28 px-6 border-t border-border/30 bg-gradient-to-b from-background to-card/30">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-3 mb-6">
@@ -222,7 +222,7 @@ export default function ShopPage() {
 
       {/* Newsletter */}
       <ScrollReveal>
-        <section className="py-24 px-6 border-t border-border">
+        <section className="py-28 px-6 border-t border-border/30">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
@@ -254,7 +254,7 @@ export default function ShopPage() {
 
       {/* Bottom CTA */}
       <ScrollReveal>
-        <section className="py-24 px-6 border-t border-border bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
+        <section className="py-28 px-6 border-t border-border/30 bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-[30%] left-[20%] w-72 h-72 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
             <div

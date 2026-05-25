@@ -88,8 +88,8 @@ export default function AboutPage() {
               LO QUE NOS DEFINE
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-8 border border-border/50 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
-                <div className="w-16 h-16 mx-auto mb-6 border border-border/50 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
+              <div className="text-center p-8 border border-border/30 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
+                <div className="w-16 h-16 mx-auto mb-6 border border-border/30 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
                   <Award className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl mb-4">
@@ -100,8 +100,8 @@ export default function AboutPage() {
                   nuestra visión del streetwear.
                 </p>
               </div>
-              <div className="text-center p-8 border border-border/50 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
-                <div className="w-16 h-16 mx-auto mb-6 border border-border/50 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
+              <div className="text-center p-8 border border-border/30 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
+                <div className="w-16 h-16 mx-auto mb-6 border border-border/30 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
                   <Infinity className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl mb-4">
@@ -112,8 +112,8 @@ export default function AboutPage() {
                   en cada costura.
                 </p>
               </div>
-              <div className="text-center p-8 border border-border/50 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
-                <div className="w-16 h-16 mx-auto mb-6 border border-border/50 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
+              <div className="text-center p-8 border border-border/30 hover:border-foreground/30 transition-all duration-300 group hover:shadow-premium">
+                <div className="w-16 h-16 mx-auto mb-6 border border-border/30 rounded-full flex items-center justify-center group-hover:border-foreground/50 transition-colors">
                   <ArrowRight className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                 </div>
                 <h3 className="font-[family-name:var(--font-display)] text-2xl mb-4">
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
       {/* Stats */}
       <ScrollReveal direction="up">
-        <section className="py-24 px-6 border-t border-border bg-card/30">
+        <section className="py-28 px-6 border-t border-border/30 bg-card/30">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="p-6 border border-border/30 hover:border-foreground/30 transition-all duration-300 group">
@@ -188,7 +188,7 @@ export default function AboutPage() {
             <div className="flex items-center justify-center gap-6">
               <SocialLinks />
             </div>
-            <div className="mt-12 pt-8 border-t border-border/50">
+            <div className="mt-12 pt-8 border-t border-border/30">
               <p className="text-[10px] tracking-[0.2em] text-muted-foreground">
                 ¿Tienes preguntas?{" "}
                 <a

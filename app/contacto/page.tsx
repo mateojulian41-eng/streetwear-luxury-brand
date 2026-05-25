@@ -113,8 +113,8 @@ export default function ContactoPage() {
 
               {/* Right - WhatsApp CTA */}
               <div className="flex flex-col justify-center">
-                <div className="bg-card/30 border border-border/50 p-10 md:p-16 backdrop-blur-sm hover:shadow-premium transition-all duration-300">
-                  <div className="w-16 h-16 border border-border/50 flex items-center justify-center mb-8 mx-auto">
+                <div className="bg-card/30 border border-border/30 p-10 md:p-16 backdrop-blur-sm hover:shadow-premium transition-all duration-300">
+                  <div className="w-16 h-16 border border-border/30 flex items-center justify-center mb-8 mx-auto">
                     <MessageCircle className="w-8 h-8 text-foreground" />
                   </div>
                   <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl mb-6 text-center">
@@ -140,7 +140,7 @@ export default function ContactoPage() {
                     </a>
                   </Button>
 
-                  <div className="mt-10 pt-10 border-t border-border/50">
+                  <div className="mt-10 pt-10 border-t border-border/30">
                     <p className="text-[10px] tracking-[0.3em] text-muted-foreground mb-4">
                       HORARIO DE ATENCIÓN
                     </p>
@@ -172,7 +172,7 @@ export default function ContactoPage() {
 
       {/* FAQ Section */}
       <ScrollReveal direction="up">
-        <section className="py-24 px-6 border-t border-border bg-card/30">
+        <section className="py-28 px-6 border-t border-border/30 bg-card/30">
           <div className="max-w-4xl mx-auto">
             <p className="text-[10px] tracking-[0.5em] text-muted-foreground mb-6 text-center">
               PREGUNTAS FRECUENTES
@@ -182,9 +182,9 @@ export default function ContactoPage() {
             </h2>
 
             <div className="space-y-8">
-              <div className="pb-8 border-b border-border/50 group">
+              <div className="pb-8 border-b border-border/30 group">
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-8 h-8 border border-border/50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
+                  <div className="w-8 h-8 border border-border/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
                     <span className="text-sm font-[family-name:var(--font-display)]">
                       1
                     </span>
@@ -201,9 +201,9 @@ export default function ContactoPage() {
                 </p>
               </div>
 
-              <div className="pb-8 border-b border-border/50 group">
+              <div className="pb-8 border-b border-border/30 group">
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-8 h-8 border border-border/50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
+                  <div className="w-8 h-8 border border-border/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
                     <span className="text-sm font-[family-name:var(--font-display)]">
                       2
                     </span>
@@ -219,9 +219,9 @@ export default function ContactoPage() {
                 </p>
               </div>
 
-              <div className="pb-8 border-b border-border/50 group">
+              <div className="pb-8 border-b border-border/30 group">
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-8 h-8 border border-border/50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
+                  <div className="w-8 h-8 border border-border/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
                     <span className="text-sm font-[family-name:var(--font-display)]">
                       3
                     </span>
@@ -239,7 +239,7 @@ export default function ContactoPage() {
 
               <div className="group">
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-8 h-8 border border-border/50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
+                  <div className="w-8 h-8 border border-border/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-foreground/50 transition-colors">
                     <span className="text-sm font-[family-name:var(--font-display)]">
                       4
                     </span>

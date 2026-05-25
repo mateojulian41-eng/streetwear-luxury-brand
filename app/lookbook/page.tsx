@@ -76,7 +76,7 @@ export default function LookbookPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1.5 bg-background/90 backdrop-blur-md border border-border/50 text-[9px] tracking-[0.25em] text-muted-foreground uppercase shadow-sm">
+                        <span className="px-3 py-1.5 bg-background/90 backdrop-blur-md border border-border/30 text-[9px] tracking-[0.25em] text-muted-foreground uppercase shadow-sm">
                           {product.category}
                         </span>
                       </div>

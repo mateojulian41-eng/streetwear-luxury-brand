@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useCartStore } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/products";
 import { useState } from "react";
+import { createCheckoutUrl } from "@/app/actions/wompi";
 
 export default function CheckoutPage() {
   const { items, getTotal, clearCart } = useCartStore();
@@ -39,7 +40,7 @@ export default function CheckoutPage() {
     setIsProcessing(true);
 
     try {
-      const { createCheckoutUrl } = await import("@/app/actions/wompi");
+      console.log("Creating checkout URL...");
 
       const checkoutUrl = await createCheckoutUrl(
         items.map((item) => ({
@@ -50,6 +51,8 @@ export default function CheckoutPage() {
         formData.email,
         `${formData.firstName} ${formData.lastName}`,
       );
+
+      console.log("CHECKOUT URL GENERATED:", checkoutUrl);
 
       // Redirigir a Wompi checkout
       window.location.href = checkoutUrl;

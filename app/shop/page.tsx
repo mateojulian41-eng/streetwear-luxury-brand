@@ -1,0 +1,296 @@
+"use client";
+
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ProductCard } from "@/components/product-card";
+import { SkeletonCard } from "@/components/skeleton-card";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
+import { NewsletterForm } from "@/components/newsletter-form";
+import { products, formatPrice } from "@/lib/products";
+import { useState, useEffect } from "react";
+
+type FilterType = "all" | "ropa" | "calzado";
+type SortType = "default" | "price-asc" | "price-desc" | "name-asc";
+
+export default function ShopPage() {
+  const [filter, setFilter] = useState<FilterType>("all");
+  const [sort, setSort] = useState<SortType>("default");
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000000]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const filteredProducts = products
+    .filter((product) => {
+      if (filter === "all") return true;
+      if (filter === "ropa") {
+        return (
+          product.category.toLowerCase().includes("oversize") ||
+          product.category.toLowerCase().includes("pants")
+        );
+      }
+      if (filter === "calzado") {
+        return product.category.toLowerCase().includes("footwear");
+      }
+      return true;
+    })
+    .filter((product) => {
+      return product.price >= priceRange[0] && product.price <= priceRange[1];
+    });
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sort === "price-asc") return a.price - b.price;
+    if (sort === "price-desc") return b.price - a.price;
+    if (sort === "name-asc") return a.name.localeCompare(b.name);
+    return 0;
+  });
+
+  return (
+    <main className="min-h-screen bg-background text-foreground">
+      <Header />
+
+      {/* Hero */}
+      <ScrollReveal>
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-gradient-to-b from-background to-card/30 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-[20%] right-[10%] w-48 h-48 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "2s" }}
+            />
+          </div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                COLECCIÓN COMPLETA
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
+            <h1 className="font-[family-name:var(--font-display)] text-5xl md:text-7xl lg:text-8xl leading-none mb-8">
+              SHOP
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                COLLECTION
+              </span>
+            </h1>
+            <p className="text-muted-foreground max-w-xl leading-relaxed text-sm md:text-base">
+              Piezas exclusivas diseñadas para quienes buscan autenticidad en el
+              lujo urbano. Cada prenda es una declaración de identidad.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="h-px bg-border" />
+      </div>
+
+      {/* Products Grid */}
+      <ScrollReveal direction="up">
+        <section className="py-16 md:py-24 px-6">
+          <div className="max-w-7xl mx-auto">
+            {/* Enhanced Filters */}
+            <div className="flex flex-wrap items-center justify-between gap-6 mb-16 p-6 border border-border/30 bg-card/30 backdrop-blur-sm rounded-lg">
+              <p className="text-sm text-foreground font-medium">
+                <span className="text-foreground/60">
+                  {sortedProducts.length}
+                </span>{" "}
+                productos
+              </p>
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
+                    FILTRAR:
+                  </span>
+                  <button
+                    onClick={() => setFilter("all")}
+                    className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
+                      filter === "all"
+                        ? "border-foreground bg-foreground text-background shadow-premium"
+                        : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                    }`}
+                  >
+                    TODOS
+                  </button>
+                  <button
+                    onClick={() => setFilter("ropa")}
+                    className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
+                      filter === "ropa"
+                        ? "border-foreground bg-foreground text-background shadow-premium"
+                        : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                    }`}
+                  >
+                    ROPA
+                  </button>
+                  <button
+                    onClick={() => setFilter("calzado")}
+                    className={`text-[11px] tracking-[0.2em] px-5 py-2.5 border transition-all duration-300 rounded-full ${
+                      filter === "calzado"
+                        ? "border-foreground bg-foreground text-background shadow-premium"
+                        : "border-border/30 text-muted-foreground hover:border-foreground hover:text-foreground hover:shadow-premium"
+                    }`}
+                  >
+                    CALZADO
+                  </button>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
+                    ORDENAR:
+                  </span>
+                  <select
+                    value={sort}
+                    onChange={(e) => setSort(e.target.value as SortType)}
+                    className="text-[11px] tracking-[0.2em] px-5 py-2.5 border border-border/30 bg-background text-foreground focus:outline-none focus:border-foreground transition-colors rounded-full"
+                  >
+                    <option value="default">Defecto</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                    <option value="name-asc">Nombre: A-Z</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Grid */}
+            {isLoading ? (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                {[...Array(6)].map((_, index) => (
+                  <SkeletonCard key={index} />
+                ))}
+              </div>
+            ) : sortedProducts.length > 0 ? (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                {sortedProducts.map((product, index) => (
+                  <ScrollReveal
+                    key={product.id}
+                    direction="up"
+                    delay={index * 100}
+                  >
+                    <ProductCard
+                      name={product.name}
+                      category={product.category}
+                      price={formatPrice(product.price)}
+                      image={product.images[0]}
+                      slug={product.slug}
+                    />
+                  </ScrollReveal>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-20">
+                <p className="text-muted-foreground">
+                  No se encontraron productos con este filtro.
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Testimonials */}
+      <ScrollReveal>
+        <section className="py-28 px-6 border-t border-border/30 bg-gradient-to-b from-background to-card/30">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+                <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                  LO QUE DICEN
+                </p>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+              </div>
+              <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl leading-none">
+                TESTIMONIOS
+              </h2>
+            </div>
+            <TestimonialCarousel />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Newsletter */}
+      <ScrollReveal>
+        <section className="py-28 px-6 border-t border-border/30">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                NEWSLETTER
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
+            <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-6xl leading-tight mb-6">
+              MANTENTE
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                ACTUALIZADO
+              </span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-12 max-w-xl mx-auto text-sm md:text-base">
+              Recibe actualizaciones exclusivas sobre nuevos lanzamientos,
+              descuentos especiales y contenido exclusivo de NOIR URBANO.
+            </p>
+            <NewsletterForm />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Bottom CTA */}
+      <ScrollReveal>
+        <section className="py-28 px-6 border-t border-border/30 bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[30%] left-[20%] w-72 h-72 bg-foreground/5 rounded-full blur-3xl animate-pulse" />
+            <div
+              className="absolute bottom-[30%] right-[20%] w-56 h-56 bg-foreground/3 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: "3s" }}
+            />
+          </div>
+          <div className="max-w-3xl mx-auto text-center relative z-10">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-foreground/40" />
+              <p className="text-[10px] tracking-[0.5em] text-foreground/80 font-medium">
+                EDICION LIMITADA
+              </p>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-foreground/40" />
+            </div>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl leading-tight mb-6">
+              SOLO 100 UNIDADES
+              <span
+                className="block text-foreground/50"
+                style={{
+                  WebkitTextStroke: "2px oklch(0.40 0 0)",
+                  color: "transparent",
+                }}
+              >
+                POR PIEZA
+              </span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-sm md:text-base max-w-lg mx-auto">
+              Cada prenda de nuestra primera entrega esta numerada y es
+              irrepetible. Una vez agotada, no volvera a fabricarse.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <Footer />
+    </main>
+  );
+}

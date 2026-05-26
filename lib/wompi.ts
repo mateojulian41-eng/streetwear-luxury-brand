@@ -3,10 +3,10 @@ import "server-only";
 import crypto from "crypto";
 
 function getWompiPublicKey(): string {
-  const key = process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY;
+  const key = process.env.WOMPI_PUBLIC_KEY;
   if (!key) {
     throw new Error(
-      "NEXT_PUBLIC_WOMPI_PUBLIC_KEY no está configurada. Añádela en .env.local",
+      "WOMPI_PUBLIC_KEY no está configurada. Añádela en .env.local",
     );
   }
   return key;
@@ -44,7 +44,7 @@ function getWompiIntegritySecret(): string {
 
 export function isWompiConfigured(): boolean {
   return Boolean(
-    process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY &&
+    process.env.WOMPI_PUBLIC_KEY &&
     process.env.WOMPI_PRIVATE_KEY &&
     process.env.WOMPI_EVENTS_KEY &&
     process.env.WOMPI_INTEGRITY_SECRET,

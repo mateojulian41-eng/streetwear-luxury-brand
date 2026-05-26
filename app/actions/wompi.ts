@@ -57,22 +57,23 @@ export async function createCheckoutUrl(
   const reference = generatePaymentReference();
 
   // Guardar orden en base de datos
-  try {
-    await prisma.order.create({
-      data: {
-        reference,
-        amountInCents,
-        currency: "COP",
-        status: "PENDING",
-        customerEmail,
-        customerName: customerFullName,
-        items: JSON.stringify(cartItems),
-      },
-    });
-  } catch (error) {
-    console.error("Error guardando orden en DB:", error);
-    // Continuar aunque falle guardar en DB
-  }
+  // COMENTADO TEMPORALMENTE PARA DEPURACIÓN EN VERCEL
+  // try {
+  //   await prisma.order.create({
+  //     data: {
+  //       reference,
+  //       amountInCents,
+  //       currency: "COP",
+  //       status: "PENDING",
+  //       customerEmail,
+  //       customerName: customerFullName,
+  //       items: JSON.stringify(cartItems),
+  //     },
+  //   });
+  // } catch (error) {
+  //   console.error("Error guardando orden en DB:", error);
+  //   // Continuar aunque falle guardar en DB
+  // }
 
   // Construir URL de checkout de Wompi
   const checkoutUrl = buildWompiCheckoutUrl({

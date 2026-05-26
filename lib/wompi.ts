@@ -1,12 +1,24 @@
 import "server-only";
 
 // Wompi API Configuration
-const WOMPI_PUBLIC_KEY = process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY;
-const WOMPI_PRIVATE_KEY = process.env.WOMPI_PRIVATE_KEY;
-const WOMPI_INTEGRATION_ID = process.env.WOMPI_INTEGRATION_ID;
+const WOMPI_PUBLIC_KEY =
+  process.env.NEXT_PUBLIC_WOMPI_PUBLIC_KEY ||
+  "pub_test_SsOxj4ERMJ1lbeHDHh5H1reTnI9aWv6a";
+const WOMPI_PRIVATE_KEY =
+  process.env.WOMPI_PRIVATE_KEY || "prv_test_3ek5xdfK0zriZDH87ALhAJzsTjFIFPk1";
+const WOMPI_INTEGRATION_ID =
+  process.env.WOMPI_INTEGRATION_ID ||
+  "test_integrity_TqOQYyV7z9zqXV0nOfitYj8KIG2rIgvy";
+
+// Log for debugging
+console.log("WOMPI_PUBLIC_KEY:", WOMPI_PUBLIC_KEY ? "SET" : "NOT SET");
+console.log("WOMPI_PRIVATE_KEY:", WOMPI_PRIVATE_KEY ? "SET" : "NOT SET");
+console.log("WOMPI_INTEGRATION_ID:", WOMPI_INTEGRATION_ID ? "SET" : "NOT SET");
 
 if (!WOMPI_PUBLIC_KEY) {
-  throw new Error("NEXT_PUBLIC_WOMPI_PUBLIC_KEY environment variable is not set");
+  throw new Error(
+    "NEXT_PUBLIC_WOMPI_PUBLIC_KEY environment variable is not set",
+  );
 }
 
 if (!WOMPI_PRIVATE_KEY) {
@@ -28,24 +40,25 @@ export const wompiConfig = {
 export function createWompiSignature(
   reference: string,
   amountInCents: number,
-  currency: string
+  currency: string,
 ): string {
   const signatureString = `${reference}${amountInCents}${currency}${wompiConfig.integrationId}`;
   return signatureString;
 }
 
-// Helper function to create a Wompi transaction
+// Helper function to create a Wompi transaction using Widget
 export async function createWompiTransaction(
   amountInCents: number,
   currency: string,
   reference: string,
   customerEmail: string,
   customerName: string,
-  returnUrl: string
+  returnUrl: string,
 ) {
   try {
     const signature = createWompiSignature(reference, amountInCents, currency);
 
+    // Crear una transacción simple que redirija al Widget de Wompi
     const response = await fetch(`${wompiConfig.apiUrl}/transactions`, {
       method: "POST",
       headers: {
@@ -59,6 +72,11 @@ export async function createWompiTransaction(
         reference: reference,
         signature: signature,
         redirect_url: returnUrl,
+        payment_method: {
+          type: "CARD",
+          installments: 1,
+        },
+        acceptance_token: "acceptance_token_placeholder",
       }),
     });
 

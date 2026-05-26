@@ -3,11 +3,12 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { reference: string } }
+  { params }: { params: Promise<{ reference: string }> }
 ) {
   try {
+    const { reference } = await params;
     const order = await prisma.order.findUnique({
-      where: { reference: params.reference },
+      where: { reference },
     });
 
     if (!order) {
